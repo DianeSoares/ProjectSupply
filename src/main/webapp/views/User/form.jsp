@@ -7,6 +7,7 @@
 <html>
 <head>
 <title>Cadastro de Usuário</title>
+
 <%@ include file="/templates/header.jsp"%>
 </head>
 <body>
@@ -17,7 +18,7 @@
 				<div id="conteudo" class="col-md-9">
 					<!-- div login -->
 					<div class="container droppedHover">
-						<form:form action="saveUser" method="post" modelAttribute="user" class="form-signin" role="form">
+						<form:form action="saveUser" name="f" method="post" modelAttribute="user" commandName="user" class="form-signin" role="form">
 							<form:hidden path="id"/>
 							<h2 class="form-signin-heading" contenteditable="false">Cadastro</h2><br/>
 							<label class="">
@@ -35,8 +36,15 @@
 								Dados de Login
 							</label><br/>
 							<form:input path="email" class="form-control" placeholder="Email" required="true" autofocus="" contenteditable="false"/>
+							<form:errors path="email" class="form-control alert-danger" role="alert" contenteditable="false"/><br/>
+							
 							<form:password path="password" class="form-control" placeholder="Senha" required="true" autofocus="" contenteditable="false"/>
-							<input type="password" name="passwordRepeat" class="form-control" placeholder="Confirme a senha" required="true" autofocus="" contenteditable="false">
+							<form:errors path="password" class="form-control alert-danger" role="alert" contenteditable="false"/><br/>
+							
+							<input type="password" name="passwordRepeat" class="form-control" placeholder="Confirme a senha" required="true" autofocus="" contenteditable="false" onchange="validarSenha()">
+							<div id="mostrarErroSenha">
+							
+							</div>							
 							<br/>
 							<button id="corPadrao" class="btn btn-lg btn-default btn-block" type="submit">Enviar</button><br/>
 						</form:form>

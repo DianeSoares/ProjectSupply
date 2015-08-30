@@ -5,27 +5,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * @author Diane
-
-
- *
- * 24 de jul de 2015
- */
-/**
  * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
-	
+
 	@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
 		ModelAndView model = new ModelAndView("home");
 		return model;
 	}
-	
+
 	@RequestMapping("/contact")
 	public ModelAndView contact() throws Exception {
 		ModelAndView model = new ModelAndView("Contact/contact");
 		return model;
 	}
+
 }

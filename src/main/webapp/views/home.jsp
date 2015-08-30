@@ -25,7 +25,7 @@
 		  </ol>
 		  <div class="carousel-inner" role="listbox">
 			<div class="item active">
-			  <img class="first-slide" src="http://conocecuba.co/wp-content/uploads/2013/12/eventos-conoce-cuba.jpg" alt="First slide">
+			  <img class="first-slide" src="resources/img/carousel/imageCarousel.jpg" alt="First slide">
 			  <div class="container">
 				<div class="carousel-caption">
 				  <h1>Example headline.</h1>
@@ -35,7 +35,7 @@
 			  </div>
 			</div>
 			<div class="item">
-			  <img class="second-slide" src="http://www.le-chalet-de-courchevel.com/maj/images_resized/2984-so-courchevel-photo-bg-03-fr.jpg" alt="Second slide">
+			  <img class="second-slide" src="resources/img/carousel/imageCarousel2.jpg" alt="Second slide">
 			  <div class="container">
 				<div class="carousel-caption">
 				  <h1>Another example headline.</h1>
@@ -45,7 +45,7 @@
 			  </div>
 			</div>
 			<div class="item">
-			  <img class="third-slide" src="http://malukets.com.br/wp-content/uploads/slider3.jpg" alt="Third slide">
+			  <img class="third-slide" src="resources/img/carousel/imageCarousel3.jpg" alt="Third slide">
 			  <div class="container">
 				<div class="carousel-caption">
 				  <h1>One more for good measure.</h1>
@@ -73,7 +73,7 @@
 			<hr>
 			<h2>
 				Eventos acontecendo na sua região  &nbsp;
-				<a href="#"><img class="img-circle" src="http://oi61.tinypic.com/2mnrex3.jpg"/></a>
+				<a href="<%= request.getContextPath() %>/event"><img class="img-circle" src="http://oi61.tinypic.com/2mnrex3.jpg"/></a>
 			</h2>
 			<br/>
 			<hr>

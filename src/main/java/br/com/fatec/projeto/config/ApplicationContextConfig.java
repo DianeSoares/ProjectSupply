@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -50,12 +51,19 @@ public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
 		viewResolver.setSuffix(".jsp");
 		return viewResolver;
 	}
-
+	
+	/*@Bean(name = "messageSource")
+	public ReloadableResourceBundleMessageSource getBundleMessageSource(){
+		ReloadableResourceBundleMessageSource bundleMessageSource = new ReloadableResourceBundleMessageSource();
+		bundleMessageSource.setBasename("/WEB-INF/messages");
+		return bundleMessageSource;
+	}*/
+	
 	@Bean(name = "dataSource")
 	public DataSource getDataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("org.postgresql.Driver");
-		dataSource.setUrl("jdbc:postgresql://localhost:5432/projeto");
+		dataSource.setUrl("jdbc:postgresql://localhost:5432/Spring");
 		dataSource.setUsername("postgres");
 		dataSource.setPassword("root");
 

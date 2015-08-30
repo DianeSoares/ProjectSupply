@@ -187,6 +187,16 @@ h2 {
     text-shadow: black 0.1em 0.1em 0.2em;
 }
 
+/*cores do botão*/
+#corPadrao{
+	 color: #ffffff;
+	 background-color:#458B74;
+}
+
+#corMenu{
+	 background-color:#ffffff;
+}
+
 /*cores do links*/
 a {
     color: #458B74;
@@ -195,15 +205,4 @@ a {
 a:hover {
 	text-decoration: underline; 
 	color: #66CDAA
-}
-
-/*cores do botão*/
-#corPadrao{
-	 color: #ffffff;
-	 background-color:#458B74;
-}
-
-#corMenu{
-	 color: #458B74;
-	 background-color:#ffffff;
 }
