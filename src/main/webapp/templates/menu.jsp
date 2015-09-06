@@ -127,7 +127,15 @@
                         <a href="#tables"><i class="fa fa-fw fa-table"></i> Tables</a>
                     </li>
                     <li>
-                        <a href="#Forms"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Cadastros <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#">Cadastro de usuário</a>
+                            </li>
+                            <li>
+                                <a href="#">Cadastro de fornecedores</a>
+                            </li>
+                        </ul>
                     </li>
                     
                 </ul>
