@@ -1,1034 +1,457 @@
-
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
-<!-- BEGIN HEAD -->
+<html lang="en">
+
 <head>
-   <meta charset="utf-8" />
-   <title>Supply Chain</title>
-   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-   <meta content="" name="description" />
-   <meta content="Mosaddek" name="author" />
-   <link href="resources/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-   <link href="resources/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
-   <link href="resources/assets/bootstrap/css/bootstrap-fileupload.css" rel="stylesheet" />
-   <link href="resources/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-   <link href="resources/css/style.css" rel="stylesheet" />
-   <link href="resources/css/style-responsive.css" rel="stylesheet" />
-   <link href="resources/css/style-default.css" rel="stylesheet" id="style_color" />
-   <link href="resources/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
-   <link href="resources/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Supply Chain</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="resources/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="resources/css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
-<!-- END HEAD -->
-<!-- BEGIN BODY -->
-<body class="fixed-top">
-   <!-- BEGIN HEADER -->
-   <div id="header" class="navbar navbar-inverse navbar-fixed-top">
-       <!-- BEGIN TOP NAVIGATION BAR -->
-       <div class="navbar-inner">
-           <div class="container-fluid">
-               <!--BEGIN SIDEBAR TOGGLE-->
-               <div class="sidebar-toggle-box hidden-phone">
-                   <div class="icon-reorder tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-               </div>
-               <!--END SIDEBAR TOGGLE-->
-               <!-- BEGIN LOGO -->
-               <a class="brand" href="index.html">
-                   <img src="resources/img/logo.png" alt="Metro Lab" />
-               </a>
-               <!-- END LOGO -->
-               <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-               <a class="btn btn-navbar collapsed" id="main_menu_trigger" data-toggle="collapse" data-target=".nav-collapse">
-                   <span class="icon-bar"></span>
-                   <span class="icon-bar"></span>
-                   <span class="icon-bar"></span>
-                   <span class="arrow"></span>
-               </a>
-               <!-- END RESPONSIVE MENU TOGGLER -->
-               <div id="top_menu" class="nav notify-row">
-                   <!-- BEGIN NOTIFICATION -->
-                   <ul class="nav top-menu">
-                       <!-- BEGIN SETTINGS -->
-                       <li class="dropdown">
-                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                               <i class="icon-tasks"></i>
-                               <span class="badge badge-important">6</span>
-                           </a>
-                           <ul class="dropdown-menu extended tasks-bar">
-                               <li>
-                                   <p>You have 6 pending tasks</p>
-                               </li>
-                               <li>
-                                   <a href="#">
-                                       <div class="task-info">
-                                         <div class="desc">Dashboard v1.3</div>
-                                         <div class="percent">44%</div>
-                                       </div>
-                                       <div class="progress progress-striped active no-margin-bot">
-                                           <div class="bar" style="width: 44%;"></div>
-                                       </div>
-                                   </a>
-                               </li>
-                               <li>
-                                   <a href="#">
-                                       <div class="task-info">
-                                           <div class="desc">Database Update</div>
-                                           <div class="percent">65%</div>
-                                       </div>
-                                       <div class="progress progress-striped progress-success active no-margin-bot">
-                                           <div class="bar" style="width: 65%;"></div>
-                                       </div>
-                                   </a>
-                               </li>
-                               <li>
-                                   <a href="#">
-                                       <div class="task-info">
-                                           <div class="desc">Iphone Development</div>
-                                           <div class="percent">87%</div>
-                                       </div>
-                                       <div class="progress progress-striped progress-info active no-margin-bot">
-                                           <div class="bar" style="width: 87%;"></div>
-                                       </div>
-                                   </a>
-                               </li>
-                               <li>
-                                   <a href="#">
-                                       <div class="task-info">
-                                           <div class="desc">Mobile App</div>
-                                           <div class="percent">33%</div>
-                                       </div>
-                                       <div class="progress progress-striped progress-warning active no-margin-bot">
-                                           <div class="bar" style="width: 33%;"></div>
-                                       </div>
-                                   </a>
-                               </li>
-                               <li>
-                                   <a href="#">
-                                       <div class="task-info">
-                                           <div class="desc">Dashboard v1.3</div>
-                                           <div class="percent">90%</div>
-                                       </div>
-                                       <div class="progress progress-striped progress-danger active no-margin-bot">
-                                           <div class="bar" style="width: 90%;"></div>
-                                       </div>
-                                   </a>
-                               </li>
-                               <li class="external">
-                                   <a href="#">See All Tasks</a>
-                               </li>
-                           </ul>
-                       </li>
-                       <!-- END SETTINGS -->
-                       <!-- BEGIN INBOX DROPDOWN -->
-                       <li class="dropdown" id="header_inbox_bar">
-                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                               <i class="icon-envelope-alt"></i>
-                               <span class="badge badge-important">5</span>
-                           </a>
-                           <ul class="dropdown-menu extended inbox">
-                               <li>
-                                   <p>You have 5 new messages</p>
-                               </li>
-                               <li>
-                                   <a href="#">
-                                       <span class="photo"><img src="resources/img/avatar-mini.png" alt="avatar" /></span>
-									<span class="subject">
-									<span class="from">Jonathan Smith</span>
-									<span class="time">Just now</span>
-									</span>
-									<span class="message">
-									    Hello, this is an example msg.
-									</span>
-                                   </a>
-                               </li>
-                               <li>
-                                   <a href="#">
-                                       <span class="photo"><img src="resources/img/avatar-mini.png" alt="avatar" /></span>
-									<span class="subject">
-									<span class="from">Jhon Doe</span>
-									<span class="time">10 mins</span>
-									</span>
-									<span class="message">
-									 Hi, Jhon Doe Bhai how are you ?
-									</span>
-                                   </a>
-                               </li>
-                               <li>
-                                   <a href="#">
-                                       <span class="photo"><img src="resources/img/avatar-mini.png" alt="avatar" /></span>
-									<span class="subject">
-									<span class="from">Jason Stathum</span>
-									<span class="time">3 hrs</span>
-									</span>
-									<span class="message">
-									    This is awesome dashboard.
-									</span>
-                                   </a>
-                               </li>
-                               <li>
-                                   <a href="#">
-                                       <span class="photo"><img src="resources/img/avatar-mini.png" alt="avatar" /></span>
-									<span class="subject">
-									<span class="from">Jondi Rose</span>
-									<span class="time">Just now</span>
-									</span>
-									<span class="message">
-									    Hello, this is metrolab
-									</span>
-                                   </a>
-                               </li>
-                               <li>
-                                   <a href="#">See all messages</a>
-                               </li>
-                           </ul>
-                       </li>
-                       <!-- END INBOX DROPDOWN -->
-                       <!-- BEGIN NOTIFICATION DROPDOWN -->
-                       <li class="dropdown" id="header_notification_bar">
-                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-                               <i class="icon-bell-alt"></i>
-                               <span class="badge badge-warning">7</span>
-                           </a>
-                           <ul class="dropdown-menu extended notification">
-                               <li>
-                                   <p>You have 7 new notifications</p>
-                               </li>
-                               <li>
-                                   <a href="#">
-                                       <span class="label label-important"><i class="icon-bolt"></i></span>
-                                       Server #3 overloaded.
-                                       <span class="small italic">34 mins</span>
-                                   </a>
-                               </li>
-                               <li>
-                                   <a href="#">
-                                       <span class="label label-warning"><i class="icon-bell"></i></span>
-                                       Server #10 not respoding.
-                                       <span class="small italic">1 Hours</span>
-                                   </a>
-                               </li>
-                               <li>
-                                   <a href="#">
-                                       <span class="label label-important"><i class="icon-bolt"></i></span>
-                                       Database overloaded 24%.
-                                       <span class="small italic">4 hrs</span>
-                                   </a>
-                               </li>
-                               <li>
-                                   <a href="#">
-                                       <span class="label label-success"><i class="icon-plus"></i></span>
-                                       New user registered.
-                                       <span class="small italic">Just now</span>
-                                   </a>
-                               </li>
-                               <li>
-                                   <a href="#">
-                                       <span class="label label-info"><i class="icon-bullhorn"></i></span>
-                                       Application error.
-                                       <span class="small italic">10 mins</span>
-                                   </a>
-                               </li>
-                               <li>
-                                   <a href="#">See all notifications</a>
-                               </li>
-                           </ul>
-                       </li>
-                       <!-- END NOTIFICATION DROPDOWN -->
+<body>
 
-                   </ul>
-               </div>
-               <!-- END  NOTIFICATION -->
-               <div class="top-nav ">
-                   <ul class="nav pull-right top-menu" >
-                       <!-- BEGIN SUPPORT -->
-                       <li class="dropdown mtop5">
+    <div id="wrapper">
 
-                           <a class="dropdown-toggle element" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Chat">
-                               <i class="icon-comments-alt"></i>
-                           </a>
-                       </li>
-                       <li class="dropdown mtop5">
-                           <a class="dropdown-toggle element" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Help">
-                               <i class="icon-headphones"></i>
-                           </a>
-                       </li>
-                       <!-- END SUPPORT -->
-                       <!-- BEGIN USER LOGIN DROPDOWN -->
-                       <li class="dropdown">
-                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                               <img src="resources/img/avatar1_small.jpg" alt="">
-                               <span class="username">Jhon Doe</span>
-                               <b class="caret"></b>
-                           </a>
-                           <ul class="dropdown-menu extended logout">
-                               <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
-                               <li><a href="#"><i class="icon-cog"></i> My Settings</a></li>
-                               <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
-                           </ul>
-                       </li>
-                       <!-- END USER LOGIN DROPDOWN -->
-                   </ul>
-                   <!-- END TOP NAVIGATION MENU -->
-               </div>
-           </div>
-       </div>
-       <!-- END TOP NAVIGATION BAR -->
-   </div>
-   <!-- END HEADER -->
-   <!-- BEGIN CONTAINER -->
-   <div id="container" class="row-fluid">
-      <!-- BEGIN SIDEBAR -->
-      <div class="sidebar-scroll">
-        <div id="sidebar" class="nav-collapse collapse">
-
-         <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-         <div class="navbar-inverse">
-            <form class="navbar-search visible-phone">
-               <input type="text" class="search-query" placeholder="Search" />
-            </form>
-         </div>
-         <!-- END RESPONSIVE QUICK SEARCH FORM -->
-         <!-- BEGIN SIDEBAR MENU -->
-          <ul class="sidebar-menu">
-              <li class="sub-menu active">
-                  <a class="" href="index.html">
-                      <i class="icon-dashboard"></i>
-                      <span>Dashboard</span>
-                  </a>
-              </li>
-              <li class="sub-menu">
-                  <a href="javascript:;" class="">
-                      <i class="icon-book"></i>
-                      <span>UI Elements</span>
-                      <span class="arrow"></span>
-                  </a>
-                  <ul class="sub">
-                      <li><a class="" href="general.html">General</a></li>
-                      <li><a class="" href="button.html">Buttons</a></li>
-                      <li><a class="" href="slider.html">Sliders</a></li>
-                      <li><a class="" href="metro_view.html">Metro View</a></li>
-                      <li><a class="" href="tabs_accordion.html">Tabs & Accordions</a></li>
-                      <li><a class="" href="typography.html">Typography</a></li>
-                      <li><a class="" href="tree_view.html">Tree View</a></li>
-                      <li><a class="" href="nestable.html">Nestable List</a></li>
-                  </ul>
-              </li>
-              <li class="sub-menu">
-                  <a href="javascript:;" class="">
-                      <i class="icon-cogs"></i>
-                      <span>Components</span>
-                      <span class="arrow"></span>
-                  </a>
-                  <ul class="sub">
-                      <li><a class="" href="calendar.html">Calendar</a></li>
-                      <li><a class="" href="grids.html">Grids</a></li>
-                      <li><a class="" href="chartjs.html">Chart Js</a></li>
-                      <li><a class="" href="flot_chart.html">Flot Charts</a></li>
-                      <li><a class="" href="gallery.html"> Gallery</a></li>
-                  </ul>
-              </li>
-              <li class="sub-menu">
-                  <a href="javascript:;" class="">
-                      <i class="icon-tasks"></i>
-                      <span>Form Stuff</span>
-                      <span class="arrow"></span>
-                  </a>
-                  <ul class="sub">
-                      <li><a class="" href="form_layout.html">Form Layouts</a></li>
-                      <li><a class="" href="form_component.html">Form Components</a></li>
-                      <li><a class="" href="form_wizard.html">Form Wizard</a></li>
-                      <li><a class="" href="form_validation.html">Form Validation</a></li>
-                      <li><a class="" href="dropzone.html">Dropzone File Upload </a></li>
-                  </ul>
-              </li>
-              <li class="sub-menu">
-                  <a href="javascript:;" class="">
-                      <i class="icon-th"></i>
-                      <span>Data Tables</span>
-                      <span class="arrow"></span>
-                  </a>
-                  <ul class="sub">
-                      <li><a class="" href="basic_table.html">Basic Table</a></li>
-                      <li><a class="" href="dynamic_table.html">Dynamic Table</a></li>
-                      <li><a class="" href="editable_table.html">Editable Table</a></li>
-                  </ul>
-              </li>
-              <li class="sub-menu">
-                  <a href="javascript:;" class="">
-                      <i class="icon-fire"></i>
-                      <span>Icons</span>
-                      <span class="arrow"></span>
-                  </a>
-                  <ul class="sub">
-                      <li><a class="" href="font_awesome.html">Font Awesome</a></li>
-                      <li><a class="" href="glyphicons.html">Glyphicons</a></li>
-                  </ul>
-              </li>
-              <li class="sub-menu">
-                  <a class="" href="javascript:;">
-                      <i class="icon-trophy"></i>
-                      <span>Portlets</span>
-                      <span class="arrow"></span>
-                  </a>
-                  <ul class="sub">
-                      <li><a href="general_portlet.html" class=""> General Portlet</a></li>
-                      <li><a href="draggable_portlet.html" class="">Draggable Portlet</a></li>
-                  </ul>
-              </li>
-              <li class="sub-menu">
-                  <a class="" href="javascript:;">
-                      <i class="icon-map-marker"></i>
-                      <span>Maps</span>
-                      <span class="arrow"></span>
-                  </a>
-                  <ul class="sub">
-                      <li><a href="vector_map.html" class="">Vector Maps</a></li>
-                      <li><a href="google_map.html" class="">Google Map</a></li>
-                  </ul>
-              </li>
-              <li class="sub-menu">
-                  <a href="javascript:;" class="">
-                      <i class="icon-file-alt"></i>
-                      <span>Sample Pages</span>
-                      <span class="arrow"></span>
-                  </a>
-                  <ul class="sub">
-                      <li><a class="" href="blank.html">Blank Page</a></li>
-                      <li><a class="" href="blog.html">Blog</a></li>
-                      <li><a class="" href="timeline.html">Timeline</a></li>
-                      <li><a class="" href="profile.html">Profile</a></li>
-                      <li><a class="" href="about_us.html">About Us</a></li>
-                      <li><a class="" href="contact_us.html">Contact Us</a></li>
-                  </ul>
-              </li>
-              <li class="sub-menu">
-                  <a href="javascript:;" class="">
-                      <i class="icon-glass"></i>
-                      <span>Extra</span>
-                      <span class="arrow"></span>
-                  </a>
-                  <ul class="sub">
-                      <li><a class="" href="lock.html">Lock Screen</a></li>
-                      <li><a class="" href="invoice.html">Invoice</a></li>
-                      <li><a class="" href="pricing_tables.html">Pricing Tables</a></li>
-                      <li><a class="" href="search_result.html">Search Result</a></li>
-                      <li><a class="" href="faq.html">FAQ</a></li>
-                      <li><a class="" href="404.html">404 Error</a></li>
-                      <li><a class="" href="500.html">500 Error</a></li>
-                  </ul>
-              </li>
-
-              <li>
-                  <a class="" href="login.html">
-                    <i class="icon-user"></i>
-                    <span>Login Page</span>
-                  </a>
-              </li>
-          </ul>
-         <!-- END SIDEBAR MENU -->
-      </div>
-      </div>
-      <!-- END SIDEBAR -->
-      <!-- BEGIN PAGE -->  
-      <div id="main-content">
-         <!-- BEGIN PAGE CONTAINER-->
-         <div class="container-fluid">
-            <!-- BEGIN PAGE HEADER-->   
-            <div class="row-fluid">
-               <div class="span12">
-                   <!-- BEGIN THEME CUSTOMIZER-->
-                   <div id="theme-change" class="hidden-phone">
-                       <i class="icon-cogs"></i>
-                        <span class="settings">
-                            <span class="text">Theme Color:</span>
-                            <span class="colors">
-                                <span class="color-default" data-style="default"></span>
-                                <span class="color-green" data-style="green"></span>
-                                <span class="color-gray" data-style="gray"></span>
-                                <span class="color-purple" data-style="purple"></span>
-                                <span class="color-red" data-style="red"></span>
-                            </span>
-                        </span>
-                   </div>
-                   <!-- END THEME CUSTOMIZER-->
-                  <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-                   <h3 class="page-title">
-                     Dashboard
-                   </h3>
-                   <ul class="breadcrumb">
-                       <li>
-                           <a href="#">Home</a>
-                           <span class="divider">/</span>
-                       </li>
-                       <li>
-                           <a href="#">Metro Lab</a>
-                           <span class="divider">/</span>
-                       </li>
-                       <li class="active">
-                           Dashboard
-                       </li>
-                       <li class="pull-right search-wrap">
-                           <form action="search_result.html" class="hidden-phone">
-                               <div class="input-append search-input-area">
-                                   <input class="" id="appendedInputButton" type="text">
-                                   <button class="btn" type="button"><i class="icon-search"></i> </button>
-                               </div>
-                           </form>
-                       </li>
-                   </ul>
-                   <!-- END PAGE TITLE & BREADCRUMB-->
-               </div>
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#Index">Supply Chain</a>
             </div>
-            <!-- END PAGE HEADER-->
-            <!-- BEGIN PAGE CONTENT-->
-            <div class="row-fluid">
-                <!--BEGIN METRO STATES-->
-                <div class="metro-nav">
-                    <div class="metro-nav-block nav-block-orange">
-                        <a data-original-title="" href="#">
-                            <i class="icon-user"></i>
-                            <div class="info">321</div>
-                            <div class="status">New User</div>
-                        </a>
-                    </div>
-                    <div class="metro-nav-block nav-olive">
-                        <a data-original-title="" href="#">
-                            <i class="icon-tags"></i>
-                            <div class="info">+970</div>
-                            <div class="status">Sales</div>
-                        </a>
-                    </div>
-                    <div class="metro-nav-block nav-block-yellow">
-                        <a data-original-title="" href="#">
-                            <i class="icon-comments-alt"></i>
-                            <div class="info">49</div>
-                            <div class="status">Comments</div>
-                        </a>
-                    </div>
-                    <div class="metro-nav-block nav-block-green double">
-                        <a data-original-title="" href="#">
-                            <i class="icon-eye-open"></i>
-                            <div class="info">+897</div>
-                            <div class="status">Unique Visitor</div>
-                        </a>
-                    </div>
-                    <div class="metro-nav-block nav-block-red">
-                        <a data-original-title="" href="#">
-                            <i class="icon-bar-chart"></i>
-                            <div class="info">+288</div>
-                            <div class="status">Update</div>
-                        </a>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu message-dropdown">
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-footer">
+                            <a href="#">Read All New Messages</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu alert-dropdown">
+                        <li>
+                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">View All</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="#Index"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#Charts"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    </li>
+                    <li>
+                        <a href="#tables"><i class="fa fa-fw fa-table"></i> Tables</a>
+                    </li>
+                    <li>
+                        <a href="#Forms"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Dashboard <small>Statistics Overview</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> Dashboard
+                            </li>
+                        </ol>
                     </div>
                 </div>
-                <div class="metro-nav">
-                    <div class="metro-nav-block nav-light-purple">
-                        <a data-original-title="" href="#">
-                            <i class="icon-shopping-cart"></i>
-                            <div class="info">29</div>
-                            <div class="status">New Order</div>
-                        </a>
-                    </div>
-                    <div class="metro-nav-block nav-light-blue double">
-                        <a data-original-title="" href="#">
-                            <i class="icon-tasks"></i>
-                            <div class="info">$37624</div>
-                            <div class="status">Stock</div>
-                        </a>
-                    </div>
-                    <div class="metro-nav-block nav-light-green">
-                        <a data-original-title="" href="#">
-                            <i class="icon-envelope"></i>
-                            <div class="info">123</div>
-                            <div class="status">Messages</div>
-                        </a>
-                    </div>
-                    <div class="metro-nav-block nav-light-brown">
-                        <a data-original-title="" href="#">
-                            <i class="icon-remove-sign"></i>
-                            <div class="info">34</div>
-                            <div class="status">Cancelled</div>
-                        </a>
-                    </div>
-                    <div class="metro-nav-block nav-block-grey ">
-                        <a data-original-title="" href="#">
-                            <i class="icon-external-link"></i>
-                            <div class="info">$53412</div>
-                            <div class="status">Total Profit</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="space10"></div>
-                <!--END METRO STATES-->
-            </div>
-            <div class="row-fluid">
-                <div class="span6">
-                    <!-- BEGIN CHART PORTLET-->
-                    <div class="widget ">
-                        <div class="widget-title">
-                            <h4><i class="icon-reorder"></i> Doughnut</h4>
-                            <span class="tools">
-                                <a href="javascript:;" class="icon-chevron-down"></a>
-                                <a href="javascript:;" class="icon-remove"></a>
-                            </span>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-comments fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">26</div>
+                                        <div>New Comments!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="widget-body">
-                            <div class="text-center">
-                                <canvas id="doughnut" height="300" width="400"></canvas>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">12</div>
+                                        <div>New Tasks!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-shopping-cart fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">124</div>
+                                        <div>New Orders!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-support fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">13</div>
+                                        <div>Support Tickets!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="morris-area-chart"></div>
                             </div>
                         </div>
                     </div>
-                    <!-- END CHART PORTLET-->
                 </div>
-                <div class="span6">
-                    <!-- BEGIN CHART PORTLET-->
-                    <div class="widget green">
-                        <div class="widget-title">
-                            <h4><i class="icon-reorder"> </i> Line</h4>
-                            <span class="tools">
-                                <a href="javascript:;" class="icon-chevron-down"></a>
-                                <a href="javascript:;" class="icon-remove"></a>
-                            </span>
-                        </div>
-                        <div class="widget-body">
-                            <div class="text-center">
-                                <canvas id="line" height="300" width="450"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END CHART PORTLET-->
-                </div>
-            </div>
+                <!-- /.row -->
 
-            <div class="row-fluid">
-                <div class="span7">
-                    <!--BEGIN GENERAL STATISTICS-->
-                    <div class="widget orange">
-                        <div class="widget-title">
-                            <h4><i class="icon-tasks"></i> General Statistics </h4>
-                         <span class="tools">
-                            <a href="javascript:;" class="icon-chevron-down"></a>
-                            <a href="javascript:;" class="icon-remove"></a>
-                         </span>
-                            <div class="update-btn">
-                                <a href="javascript:;" class="btn update-easy-pie-chart"><i class="icon-repeat"></i> Update</a>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Donut Chart</h3>
                             </div>
-                        </div>
-                        <div class="widget-body">
-                            <div class="text-center">
-                                <div class="easy-pie-chart">
-                                    <div class="percentage success" data-percent="55"><span>55</span>%</div>
-                                    <div class="title">New visits</div>
-                                </div>
-                                <div class="easy-pie-chart">
-                                    <div class="percentage" data-percent="46"><span>46</span>%</div>
-                                    <div class="title">Bounce rate</div>
-                                </div>
-                                <div class="easy-pie-chart">
-                                    <div class="percentage" data-percent="92"><span>92</span>%</div>
-                                    <div class="title">Server load</div>
-                                </div>
-                                <div class="easy-pie-chart">
-                                    <div class="percentage" data-percent="84"><span>752</span>MB</div>
-                                    <div class="title">Used RAM</div>
+                            <div class="panel-body">
+                                <div id="morris-donut-chart"></div>
+                                <div class="text-right">
+                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--END GENERAL STATISTICS-->
-                </div>
-                <div class="span5">
-                    <!--BEGIN GENERAL STATISTICS-->
-                    <div class="widget purple">
-                        <div class="widget-title">
-                            <h4><i class="icon-tasks"></i> General Statistics </h4>
-                         <span class="tools">
-                            <a href="javascript:;" class="icon-chevron-down"></a>
-                            <a href="javascript:;" class="icon-remove"></a>
-                         </span>
-                        </div>
-                        <div class="widget-body">
-                            <div class="row-fluid">
-                                <div class="text-center">
-                                    <div class="sparkline">
-                                        <div id="metro-sparkline-type1"></div>
-                                        <div class="sparkline-tittle">Server Load</div>
-                                    </div>
-                                    <div class="sparkline">
-                                        <div id="metro-sparkline-type2"></div>
-                                        <div class="sparkline-tittle">Network Load</div>
-                                    </div>
-                                    <div class="sparkline">
-                                        <div id="metro-sparkline-type3"></div>
-                                        <div class="sparkline-tittle">Visit Load</div>
-                                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Tasks Panel</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">just now</span>
+                                        <i class="fa fa-fw fa-calendar"></i> Calendar updated
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">4 minutes ago</span>
+                                        <i class="fa fa-fw fa-comment"></i> Commented on a post
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">23 minutes ago</span>
+                                        <i class="fa fa-fw fa-truck"></i> Order 392 shipped
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">46 minutes ago</span>
+                                        <i class="fa fa-fw fa-money"></i> Invoice 653 has been paid
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">1 hour ago</span>
+                                        <i class="fa fa-fw fa-user"></i> A new user has been added
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">2 hours ago</span>
+                                        <i class="fa fa-fw fa-check"></i> Completed task: "pick up dry cleaning"
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">yesterday</span>
+                                        <i class="fa fa-fw fa-globe"></i> Saved the world
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">two days ago</span>
+                                        <i class="fa fa-fw fa-check"></i> Completed task: "fix error on sales page"
+                                    </a>
+                                </div>
+                                <div class="text-right">
+                                    <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--END GENERAL STATISTICS-->
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Transactions Panel</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Order #</th>
+                                                <th>Order Date</th>
+                                                <th>Order Time</th>
+                                                <th>Amount (USD)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>3326</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:29 PM</td>
+                                                <td>$321.33</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3325</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:20 PM</td>
+                                                <td>$234.34</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3324</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:03 PM</td>
+                                                <td>$724.17</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3323</td>
+                                                <td>10/21/2013</td>
+                                                <td>3:00 PM</td>
+                                                <td>$23.71</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3322</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:49 PM</td>
+                                                <td>$8345.23</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3321</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:23 PM</td>
+                                                <td>$245.12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3320</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:15 PM</td>
+                                                <td>$5663.54</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3319</td>
+                                                <td>10/21/2013</td>
+                                                <td>2:13 PM</td>
+                                                <td>$943.45</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-right">
+                                    <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- /.row -->
+
             </div>
-            <div class="row-fluid">
-                 <div class="span6">
-                     <!-- BEGIN NOTIFICATIONS PORTLET-->
-                     <div class="widget blue">
-                         <div class="widget-title">
-                             <h4><i class="icon-bell"></i> Notification </h4>
-                           <span class="tools">
-                               <a href="javascript:;" class="icon-chevron-down"></a>
-                               <a href="javascript:;" class="icon-remove"></a>
-                           </span>
-                         </div>
-                         <div class="widget-body">
-                             <ul class="item-list scroller padding"  style="overflow: hidden; width: auto; height: 320px;" data-always-visible="1">
-                                 <li>
-                                     <span class="label label-success"><i class="icon-bell"></i></span>
-                                     <span>New user registered.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">Just now</span>
+            <!-- /.container-fluid -->
 
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-success"><i class="icon-bell"></i></span>
-                                     <span>New order received.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">15 mins ago</span>
+        </div>
+        <!-- /#page-wrapper -->
 
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-warning"><i class="icon-bullhorn"></i></span>
-                                     <span>Alerting a user account balance.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">3 hours ago</span>
+    </div>
+    <!-- /#wrapper -->
 
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-important"><i class=" icon-bug"></i></span>
-                                     <span>Alerting administrators staff.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">9 mins ago</span>
+    <!-- jQuery -->
+    <script src="resources/js/jquery.js"></script>
 
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-important"><i class=" icon-bug"></i></span>
-                                     <span>Messages are not sent to users.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">10 hours ago</span>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="resources/js/bootstrap.min.js"></script>
 
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-warning"><i class="icon-bullhorn"></i></span>
-                                     <span>Web server #12 failed to relosd.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">3 mins ago</span>
+    <!-- Morris Charts JavaScript -->
+    <script src="resources/js/plugins/morris/raphael.min.js"></script>
+    <script src="resources/js/plugins/morris/morris.min.js"></script>
+    <script src="resources/js/plugins/morris/morris-data.js"></script>
 
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-success"><i class="icon-bell"></i></span>
-                                     <span>New order received.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">40 mins ago</span>
-
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-warning"><i class="icon-bullhorn"></i></span>
-                                     <span>Alerting a user account balance.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">1 hours ago</span>
-
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-important"><i class=" icon-bug"></i></span>
-                                     <span>Alerting administrators staff.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">1 mins ago</span>
-
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-important"><i class=" icon-bug"></i></span>
-                                     <span>Messages are not sent to users.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">11 hours ago</span>
-
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-warning"><i class="icon-bullhorn"></i></span>
-                                     <span>Web server #12 failed to relosd.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">1 day ago</span>
-
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-success"><i class="icon-bell"></i></span>
-                                     <span>New order received.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">10 mins ago</span>
-
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-warning"><i class="icon-bullhorn"></i></span>
-                                     <span>Alerting a user account balance.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">3 hours ago</span>
-
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-important"><i class=" icon-bug"></i></span>
-                                     <span>Alerting administrators support staff.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">6 hours ago</span>
-
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-important"><i class=" icon-bug"></i></span>
-                                     <span>Messages are not sent to users.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">3 days ago</span>
-
-                                     </div>
-                                 </li>
-                                 <li>
-                                     <span class="label label-warning"><i class="icon-bullhorn"></i></span>
-                                     <span>Web server #12 failed to relosd.</span>
-                                     <div class="pull-right">
-                                         <span class="small italic ">1 day ago</span>
-
-                                     </div>
-                                 </li>
-                             </ul>
-                             <div class="space10"></div>
-                             <a href="#" class="pull-right">View all notifications</a>
-                             <div class="clearfix no-top-space no-bottom-space"></div>
-                         </div>
-                     </div>
-                     <!-- END NOTIFICATIONS PORTLET-->
-                 </div>
-                 <div class="span6">
-                     <!-- BEGIN CHAT PORTLET-->
-                     <div class="widget red">
-                         <div class="widget-title">
-                             <h4><i class="icon-comments-alt"></i> Chats</h4>
-									<span class="tools">
-									<a href="javascript:;" class="icon-chevron-down"></a>
-									<a href="javascript:;" class="icon-remove"></a>
-									</span>
-                         </div>
-                         <div class="widget-body">
-                             <div class="timeline-messages">
-                                 <!-- Comment -->
-                                 <div class="msg-time-chat">
-                                     <a class="message-img" href="#"><img alt="" src="resources/img/avatar1.jpg" class="avatar"></a>
-                                     <div class="message-body msg-in">
-                                         <span class="arrow"></span>
-                                         <div class="text">
-                                             <p class="attribution"><a href="#">Jhon Doe</a> at 1:55pm, 13th April 2013</p>
-                                             <p>Hello, How are you brother?</p>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <!-- /comment -->
-
-                                 <!-- Comment -->
-                                 <div class="msg-time-chat">
-                                     <a class="message-img" href="#"><img alt="" src="resources/img/avatar2.jpg" class="avatar"></a>
-                                     <div class="message-body msg-out">
-                                         <span class="arrow"></span>
-                                         <div class="text">
-                                             <p class="attribution"> <a href="#">Jonathan Smith</a> at 2:01pm, 13th April 2013</p>
-                                             <p>I'm Fine, Thank you. What about you? How is going on?</p>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <!-- /comment -->
-
-                                 <!-- Comment -->
-                                 <div class="msg-time-chat">
-                                     <a class="message-img" href="#"><img alt="" src="resources/img/avatar1.jpg" class="avatar"></a>
-                                     <div class="message-body msg-in">
-                                         <span class="arrow"></span>
-                                         <div class="text">
-                                             <p class="attribution"><a href="#">Jhon Doe</a> at 2:03pm, 13th April 2013</p>
-                                             <p>Yeah I'm fine too. Everything is going fine here.</p>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <!-- /comment -->
-
-                                 <!-- Comment -->
-                                 <div class="msg-time-chat">
-                                     <a class="message-img" href="#"><img alt="" src="resources/img/avatar2.jpg" class="avatar"></a>
-                                     <div class="message-body msg-out">
-                                         <span class="arrow"></span>
-                                         <div class="text">
-                                             <p class="attribution"><a href="#">Jonathan Smith</a> at 2:05pm, 13th April 2013</p>
-                                             <p>well good to know that. anyway how much time you need to done your task?</p>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <!-- /comment -->
-                             </div>
-                             <div class="chat-form">
-                                 <div class="input-cont">
-                                     <input type="text" placeholder="Type a message here..." />
-                                 </div>
-                                 <div class="btn-cont">
-                                     <a href="javascript:;" class="btn btn-primary">Send</a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <!-- END CHAT PORTLET-->
-                 </div>
-             </div>
-            <div class="row-fluid">
-                <div class="span7 responsive" data-tablet="span7 fix-margin" data-desktop="span7">
-                    <!-- BEGIN CALENDAR PORTLET-->
-                    <div class="widget yellow">
-                        <div class="widget-title">
-                            <h4><i class="icon-calendar"></i> Calendar</h4>
-                            <span class="tools">
-                                <a href="javascript:;" class="icon-chevron-down"></a>
-                                <a href="javascript:;" class="icon-remove"></a>
-                            </span>
-                        </div>
-                        <div class="widget-body">
-                            <div id="calendar" class="has-toolbar"></div>
-                        </div>
-                    </div>
-                    <!-- END CALENDAR PORTLET-->
-                </div>
-                <div class="span5">
-                    <!-- BEGIN PROGRESS PORTLET-->
-                    <div class="widget purple">
-                        <div class="widget-title">
-                            <h4><i class="icon-tasks"></i> Task In progress </h4>
-                            <span class="tools">
-                                <a href="javascript:;" class="icon-chevron-down"></a>
-                                <a href="javascript:;" class="icon-remove"></a>
-                            </span>
-                        </div>
-                        <div class="widget-body">
-                            <ul class="unstyled">
-                                <li>
-                                    <span class="btn btn-inverse"> <i class="icon-refresh"></i></span>  Update Jquery <strong class="label"> 48%</strong>
-                                    <div class="space10"></div>
-                                    <div class="progress">
-                                        <div style="width: 48%;" class="bar"></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="btn btn-inverse"> <i class="icon-check"></i></span>  Update font awesome <strong class="label label-success"> 85%</strong>
-                                    <div class="space10"></div>
-                                    <div class="progress progress-success">
-                                        <div style="width: 85%;" class="bar"></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span class="btn btn-inverse"> <i class="icon-fire"></i></span>  Update CSS3 <strong class="label label-important"> 65%</strong>
-                                    <div class="space10"></div>
-                                    <div class="progress progress-danger">
-                                        <div style="width: 65%;" class="bar"></div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- END PROGRESS PORTLET-->
-                    <!-- BEGIN ALERTS PORTLET-->
-                    <div class="widget orange">
-                        <div class="widget-title">
-                            <h4><i class="icon-bell-alt"></i> Alerts</h4>
-                            <span class="tools">
-                            <a class="icon-chevron-down" href="javascript:;"></a>
-                            <a class="icon-remove" href="javascript:;"></a>
-                            </span>
-                        </div>
-                        <div class="widget-body">
-                            <div class="alert">
-                                <button data-dismiss="alert" class="close">×</button>
-                                <strong>Warning!</strong> Best check yo self, you're not looking too good.
-                            </div>
-                            <div class="alert alert-success">
-                                <button data-dismiss="alert" class="close">×</button>
-                                <strong>Success!</strong> You successfully read this important message.
-                            </div>
-                            <div class="alert alert-info">
-                                <button data-dismiss="alert" class="close">×</button>
-                                <strong>Info!</strong> Heads up! This alert needs your attention.
-                            </div>
-                            <div class="alert alert-error">
-                                <button data-dismiss="alert" class="close">×</button>
-                                <strong>Error!</strong> Change a few things. Please submit again.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END ALERTS PORTLET-->
-                </div>
-            </div>
-
-            <!-- END PAGE CONTENT-->         
-         </div>
-         <!-- END PAGE CONTAINER-->
-      </div>
-      <!-- END PAGE -->  
-   </div>
-   <!-- END CONTAINER -->
-
-   <!-- BEGIN FOOTER -->
-   <div id="footer">
-       2013 &copy; Metro Lab Dashboard.
-   </div>
-   <!-- END FOOTER -->
-
-   <!-- BEGIN JAVASCRIPTS -->
-   <!-- Load javascripts at bottom, this will reduce page load time -->
-   <script src="resources/js/jquery-1.8.3.min.js"></script>
-   <script src="resources/js/jquery.nicescroll.js" type="text/javascript"></script>
-   <script type="text/javascript" src="resources/assets/jquery-slimscroll/jquery-ui-1.9.2.custom.min.js"></script>
-   <script type="text/javascript" src="resources/assets/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-   <script src="resources/assets/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
-   <script src="resources/assets/bootstrap/js/bootstrap.min.js"></script>
-
-   <!-- ie8 fixes -->
-   <!--[if lt IE 9]>
-   <script src="js/excanvas.js"></script>
-   <script src="js/respond.js"></script>
-   <![endif]-->
-
-   <script src="resources/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js" type="text/javascript"></script>
-   <script src="resources/js/jquery.sparkline.js" type="text/javascript"></script>
-   <script src="resources/assets/chart-master/Chart.js"></script>
-   <script src="resources/js/jquery.scrollTo.min.js"></script>
-
-
-   <!--common script for all pages-->
-   <script src="resources/js/common-scripts.js"></script>
-
-   <!--script for this page only-->
-
-   <script src="resources/js/easy-pie-chart.js"></script>
-   <script src="resources/js/sparkline-chart.js"></script>
-   <script src="resources/js/home-page-calender.js"></script>
-   <script src="resources/js/home-chartjs.js"></script>
-
-   <!-- END JAVASCRIPTS -->   
 </body>
-<!-- END BODY -->
+
 </html>
