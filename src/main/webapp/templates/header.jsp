@@ -22,6 +22,9 @@
 
     <!-- Custom Fonts -->
     <link href="resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <link href="resources/css/style.css" rel="stylesheet">
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,6 +33,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
+     <script src="resources/js/validarCampos.js"></script>
+     
      <script src="resources/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->

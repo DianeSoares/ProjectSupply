@@ -11,9 +11,14 @@
 <%@ include file="/templates/header.jsp"%>
 </head>
 <body>
-	<%@ include file="/templates/menu.jsp"%>
-		<!-- SEU CONTEÚDO -->
-		<div class="container">
+	<div id="wrapper">
+
+        
+		<%@ include file="/templates/menu.jsp"%>
+	
+	
+	 <div id="page-wrapper">
+	            <div class="container-fluid">
 			<div class="row">
 				<div id="conteudo" class="col-md-9">
 					<!-- div login -->
@@ -50,8 +55,12 @@
 						</form:form>
 					</div><!-- fim div login -->	
 				</div><!-- div conteudo -->
-			</div><!-- div row container -->
+			</div><!-- div row container --><br/>
+			<br/>
+			<%@ include file="/templates/footer.jsp"%>
 		</div><!-- div container --><br/>
-	<%@ include file="/templates/footer.jsp"%>
+		</div>
+	</div><!-- div wrapper --><br/>
+	
 </body>
 </html>

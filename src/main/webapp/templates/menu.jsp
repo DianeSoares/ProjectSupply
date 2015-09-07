@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                 <a id="navbar-brand" href="#Index"><img id="logo" class="img-responsive" src="resources/img/SCM.png"></a>
+                 <a id="navbar-brand" href="<%= request.getContextPath() %>"><img id="logo" class="img-responsive" src="resources/img/SCM.png"></a>
                 <br>
                 	<br>
             </div>
@@ -118,24 +118,40 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="#Index"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="<%= request.getContextPath() %>"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#Charts"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                        <a href="#Charts"><i class="fa fa-fw fa-bar-chart-o"></i> Dados </a>
                     </li>
                     <li>
-                        <a href="#tables"><i class="fa fa-fw fa-table"></i> Tables</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Cadastros <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-shopping-cart"></i> Estoque <i class="fa fa-fw fa-caret-down"></i></a>
+                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="#">Cadastro de usuário</a>
+                                <a href="#">Cadastro de material</a>
+                            </li>
+                            <li>
+                                <a href="#">Relatório de estoque</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-group"></i> Cadastros <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo1" class="collapse">
+                            <li>
+                                <a href="<%= request.getContextPath() %>/newUser">Cadastro de usuários</a>
                             </li>
                             <li>
                                 <a href="#">Cadastro de fornecedores</a>
                             </li>
                         </ul>
+                    </li>
+                    
+                    <li>
+                        <a href=""><i class="fa fa-fw  fa-truck"></i> Entregas </a>                   
+                    </li>
+                    
+                    <li>
+                        <a href="" ><i class="fa fa-fw  fa-truck"></i> Recebimentos </a>                   
                     </li>
                     
                 </ul>
