@@ -24,19 +24,21 @@
 						Email ou senha incorretos!
 					</div>
 				</c:if>
-				<div id="wrapper">
-			    <form:form action="checkLogin" name="f" method="post" modelAttribute="user" commandName="user" class="form-signin" role="form">
-						
-							<h2 class="form-signin-heading" contenteditable="false">Login</h2><br/>
-							<form:input path="email" class="form-control" placeholder="Email" required="true" autofocus="" contenteditable="false"/>
-							<form:password path="password" class="form-control" placeholder="Senha" required="true" autofocus="" contenteditable="false"/>
-							<label class="checkbox">
-								<input type="checkbox" value="remember-me" class="">Lembre-me</label><br/>
-							<button id="corPadrao" class="btn btn-lg btn-default btn-block" type="submit">Entrar</button><br/>
-							<a href="<%= request.getContextPath() %>/newUser">Novo por aqui? Cadastre-se</a>
-				</form:form>
-  </div>		
+				<div align="center" >
+					    <form action="checkLogin" class="form-signin" method="POST">       
+					      <h2 class="form-signin-heading">Please login</h2>
+					      <input type="text" class="form-control" name="email" placeholder="Email" required="" autofocus="" />
+					      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
+					      <label class="checkbox">
+					        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+					      </label>
+					      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+					    </form>
+					  </div>
+ 			    </div>		
 		
-		</div></div></div><!-- div container --><br/>
+				</div>
+			</div>
+		</div><!-- div container --><br/>
 	</body>
 </html>
