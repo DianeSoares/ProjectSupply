@@ -20,7 +20,7 @@
 	 <div id="page-wrapper">
 	            <div class="container-fluid">
 			<div class="row">
-				<div id="conteudo" class="col-md-9">
+				<div class="col-lg-12">
 					<!-- div login -->
 					<div class="container droppedHover">
 						<form:form action="saveUser" name="f" method="post" modelAttribute="user" commandName="user" class="form-signin" role="form">
@@ -51,16 +51,18 @@
 							
 							</div>							
 							<br/>
-							<button id="corPadrao" class="btn btn-lg btn-default btn-block" type="submit">Enviar</button><br/>
+							<button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button><br/>
 						</form:form>
+						
+						<div id="whiteSpace">
+						
+						</div>
 					</div><!-- fim div login -->	
 				</div><!-- div conteudo -->
-			</div><!-- div row container --><br/>
-			<br/>
-			<%@ include file="/templates/footer.jsp"%>
-		</div><!-- div container --><br/>
-		</div>
-	</div><!-- div wrapper --><br/>
+			</div><!-- div row container -->
+		</div><!-- div container -->
+	</div><!-- div wrapper -->
+</div>
 	
 </body>
 </html>

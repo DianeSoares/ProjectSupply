@@ -4,11 +4,11 @@
 					</div> <!-- Aqui e a area da logo do rodape -->
 				</div>
 		</footer>
-		<div class="copyright">
+		<div >
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-12">
-						<p>&copy; Todos os direitos reservados.</p>
+					<div class="col-lg-12">
+						
 					</div>
 				</div>
 			</div>

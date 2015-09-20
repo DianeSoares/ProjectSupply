@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                 <a id="navbar-brand" href="<%= request.getContextPath() %>"><img id="logo" class="img-responsive" src="resources/img/SCM.png"></a>
+                 <a id="navbar-brand" href="<%= request.getContextPath() %>">SUPPLY CHAIN</a>
                 <br>
                 	<br>
             </div>
@@ -141,7 +141,7 @@
                                 <a href="<%= request.getContextPath() %>/newUser">Cadastro de usuários</a>
                             </li>
                             <li>
-                                <a href="#">Cadastro de fornecedores</a>
+                                <a href="<%= request.getContextPath() %>/loginUser">Cadastro de fornecedores</a>
                             </li>
                         </ul>
                     </li>

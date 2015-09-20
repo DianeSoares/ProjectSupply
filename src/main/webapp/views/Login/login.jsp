@@ -8,28 +8,35 @@
 <head>
 <title>Login</title>
 <%@ include file="/templates/header.jsp"%>
+
 </head>
 	<body>
+	 <div id="wrapper">
+
+        
 		<%@ include file="/templates/menu.jsp"%>
-		<!-- SEU CONTEÚDO -->
-		<div class="container">
-			<div class="row">
-				<div id="conteudo" class="col-md-9">	
-					<!-- div login -->
-					<div class="container droppedHover">
-						<form class="form-signin" role="form">
+	
+	
+	 <div id="page-wrapper">
+	            <div class="container-fluid">
+	            <c:if test="${erroLogin == 'sim'}">
+					<div class="alert alert-danger" role="alert">
+						Email ou senha incorretos!
+					</div>
+				</c:if>
+				<div id="wrapper">
+			    <form:form action="checkLogin" name="f" method="post" modelAttribute="user" commandName="user" class="form-signin" role="form">
+						
 							<h2 class="form-signin-heading" contenteditable="false">Login</h2><br/>
-							<input type="text" name="email" class="form-control" placeholder="Email" required="" autofocus="" contenteditable="false">
-							<input type="password" name="password" class="form-control" placeholder="Senha" required="" contenteditable="false">
+							<form:input path="email" class="form-control" placeholder="Email" required="true" autofocus="" contenteditable="false"/>
+							<form:password path="password" class="form-control" placeholder="Senha" required="true" autofocus="" contenteditable="false"/>
 							<label class="checkbox">
 								<input type="checkbox" value="remember-me" class="">Lembre-me</label><br/>
 							<button id="corPadrao" class="btn btn-lg btn-default btn-block" type="submit">Entrar</button><br/>
 							<a href="<%= request.getContextPath() %>/newUser">Novo por aqui? Cadastre-se</a>
-						</form>
-					</div><!-- fim div login -->
-				</div><!-- div conteudo -->
-			</div><!-- div row container -->
-		</div><!-- div container --><br/>
-		<%@ include file="/templates/footer.jsp"%>	
+				</form:form>
+  </div>		
+		
+		</div></div></div><!-- div container --><br/>
 	</body>
 </html>

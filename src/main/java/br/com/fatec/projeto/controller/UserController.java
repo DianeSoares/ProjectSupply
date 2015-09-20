@@ -31,11 +31,6 @@ public class UserController {
 	@Autowired
 	private UserDAO userDao;
 
-	@RequestMapping("/loginUser")
-	public ModelAndView loginUser() throws Exception {
-		ModelAndView model = new ModelAndView("Login/login");
-		return model;
-	}
 
 	@RequestMapping("/listUser")
 	public ModelAndView listUser() throws Exception {

@@ -31,4 +31,10 @@ public interface UserDAO {
 	public void saveOrUpdate(User user);
 
 	public void remove(int id);
+	
+	public boolean findByEmail(String email);
+	
+	public boolean checkLogin(String email, String password);
+	
+	
 }

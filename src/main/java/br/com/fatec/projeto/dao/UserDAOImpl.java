@@ -1,5 +1,6 @@
 package br.com.fatec.projeto.dao;
 
+import java.util.ArrayList;
 /**
  * @author Diane
  *
@@ -9,6 +10,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -29,6 +31,14 @@ public class UserDAOImpl implements UserDAO {
 		this.sessionFactory = sessionFactory;
 	}
 
+	public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+	 }
+	
+	 protected Session getSession(){
+	        return sessionFactory.openSession();
+	 }
+	 
 	@Override
 	@Transactional
 	public List<User> findAll() {
@@ -69,4 +79,45 @@ public class UserDAOImpl implements UserDAO {
 		return null;
 	}
 	
+	@SuppressWarnings("rawtypes")
+	@Override
+	@Transactional
+	public boolean findByEmail(String email) {
+		Session session = sessionFactory.openSession();
+		boolean userFound = false;
+		//Query using Hibernate Query Language
+		String SQL_QUERY =" from User as o where o.email=?";
+		Query query = session.createQuery(SQL_QUERY);
+		query.setParameter(0,email);
+		List list = query.list();
+
+		if ((list != null) && (list.size() > 0)) {
+			userFound= true;
+		}
+
+		session.close();
+		return userFound;        
+	}
+	
+	@SuppressWarnings("rawtypes")
+	@Override
+	@Transactional
+	public boolean checkLogin(String email, String password) {
+		Session session = sessionFactory.openSession();
+		boolean userFound = false;
+		//Query using Hibernate Query Language
+		String SQL_QUERY =" from User as o where o.email=?  and o.password=?";
+		Query query = session.createQuery(SQL_QUERY);
+		query.setParameter(0,email);
+		query.setParameter(1, password);
+		List list = query.list();
+
+		if ((list != null) && (list.size() > 0)) {
+			userFound= true;
+		}
+
+		session.close();
+		return userFound;        
+	}
+
 }
