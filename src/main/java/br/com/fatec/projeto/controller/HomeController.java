@@ -16,9 +16,9 @@ public class HomeController {
 		return model;
 	}
 
-	@RequestMapping("/contact")
+	@RequestMapping("/about")
 	public ModelAndView contact() throws Exception {
-		ModelAndView model = new ModelAndView("Contact/contact");
+		ModelAndView model = new ModelAndView("About/about");
 		return model;
 	}
 

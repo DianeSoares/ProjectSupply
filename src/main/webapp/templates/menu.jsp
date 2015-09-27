@@ -69,6 +69,9 @@
                     <li>
                         <a href="" ><i class="fa fa-fw  fa-truck"></i> Recebimentos </a>                   
                     </li>
+                    <li>
+                        <a href="<%= request.getContextPath() %>/about" ><i class="fa fa-fw  fa-info-circle"></i> Sobre </a>                   
+                    </li>
                     
                 </ul>
             </div>
