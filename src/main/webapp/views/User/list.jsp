@@ -7,17 +7,22 @@
 <head>
 <title>Listar Usuários</title>
 <%@ include file="/templates/header.jsp"%>
-
 </head>
-	<body>
+<body>
+	<div id="wrapper">
+
+        
 		<%@ include file="/templates/menu.jsp"%>
+	
+	
+	 <div id="page-wrapper">
 		<!-- SEU CONTEÚDO -->
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				<div id="conteudo" class="col-md-12">
+				<div class="col-md-12">
 					<div class="panel panel-default">
 					  <!-- Default panel contents -->
-					  <div id="corPadrao" class="panel-heading">Usuários Cadastrados</div>
+					  <div id="usersList" class="panel-heading"><strong>Usuários Cadastrados</strong></div>
 					
 					  <!-- Table -->
 					  <table class="table">
@@ -65,6 +70,8 @@
 				</div>
 			</div>
 		</div>
-		<%@ include file="/templates/footer.jsp"%>	
+
+			</div>
+		</div>
 	</body>
 </html>

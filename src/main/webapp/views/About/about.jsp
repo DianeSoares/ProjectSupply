@@ -20,6 +20,15 @@
 	 <div id="page-wrapper">
 	            <div class="container-fluid">
 				<div class="row">
+				
+				<div class="col-md-12">
+			<h3 class="text-primary">
+				Este site foi desenvolvido usando as seguintes ferramentas:
+				
+			</h3>
+			<div class="row">
+			<img alt="" src="resources/img/about/about.png">
+			
 					
 				</div><!-- div row container -->
 				</div><!-- div row container -->

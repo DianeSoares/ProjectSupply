@@ -30,12 +30,6 @@
 								Dados Pessoais
 							</label><br/>
 							<form:input path="name" class="form-control" placeholder="Nome Completo" required="true" autofocus="" contenteditable="false"/>
-							<!-- <input type="text" name="cpf" class="form-control" placeholder="CPF" required="" contenteditable="false">
-							
-							<label class="">
-								Data de Nascimento
-							</label><br/>
-							<input type="date" class="form-control">-->
 							<br/>
 							<label class="">
 								Dados de Login

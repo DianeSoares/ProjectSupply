@@ -10,6 +10,12 @@
     <meta name="author" content="">
 
     <title>Supply Chain</title>
+    
+    <!-- Adding favicon -->
+    <link rel="icon" 
+      type="image/png" 
+      href="resources/img/favicon.png">
+
 
     <!-- Bootstrap Core CSS -->
     <link href="resources/css/bootstrap.min.css" rel="stylesheet">
