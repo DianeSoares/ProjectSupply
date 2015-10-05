@@ -1,5 +1,7 @@
 package br.com.fatec.projeto.controller;
 
+import java.util.HashMap;
+
 /**
  * @author Diane
  *
@@ -7,6 +9,7 @@ package br.com.fatec.projeto.controller;
  */
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -65,12 +68,15 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/saveUser", method = RequestMethod.POST)
-	public ModelAndView saveUser(@Valid @ModelAttribute("user") User user, BindingResult result) {
+	public ModelAndView saveUser(@Valid @ModelAttribute("user") User user, BindingResult result,  final RedirectAttributes redirectAttributes) {
+
 
 		if (result.hasErrors()) {
 			return new ModelAndView("User/form");
 		}
 		userDao.saveOrUpdate(user);
+		redirectAttributes.addFlashAttribute("user", user);		 
+		redirectAttributes.addFlashAttribute("message","Usuário adicionado com sucesso.");
 		return new ModelAndView("redirect:/listUser");
 	}
 }

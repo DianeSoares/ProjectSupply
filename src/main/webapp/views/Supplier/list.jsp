@@ -2,7 +2,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <html>
 <head>
@@ -23,11 +22,7 @@
 				<div class="col-md-12">
 					<div class="panel panel-default">
 					  <!-- Default panel contents -->
-					  
-					 <!--  <span ><h3>${message}</h3>
-    					${user.name} adicionado com sucesso..</span> -->
-					  
-					  <div id="usersList" class="panel-heading"><strong>Usuários Cadastrados</strong></div>
+					  <div class="panel-heading">Usuários Cadastrados</div>
 					
 					  <!-- Table -->
 					  <table class="table">
@@ -78,5 +73,6 @@
 
 			</div>
 		</div>
+		<%@ include file="/templates/footer.jsp"%>	
 	</body>
 </html>

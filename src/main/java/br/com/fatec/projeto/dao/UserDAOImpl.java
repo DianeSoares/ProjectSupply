@@ -1,6 +1,5 @@
 package br.com.fatec.projeto.dao;
 
-import java.util.ArrayList;
 /**
  * @author Diane
  *
@@ -117,7 +116,8 @@ public class UserDAOImpl implements UserDAO {
 		}
 
 		session.close();
-		return userFound;        
+		return userFound;   
+		
 	}
 
 }
