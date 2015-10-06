@@ -6,7 +6,7 @@
 
 <html>
 <head>
-<title>Cadastro de Usuário</title>
+<title>Cadastro de Fornecedor</title>
 
 <%@ include file="/templates/header.jsp"%>
 </head>
@@ -23,35 +23,31 @@
 				<div class="col-lg-12">
 					<!-- div login -->
 					<div class="container droppedHover">
-						<form:form action="saveUser" name="f" method="post" modelAttribute="user" commandName="user" class="form-signin" role="form">
+						<form:form action="saveSupplier" name="f" method="post" modelAttribute="supplier" commandName="supplier" class="form-signin" role="form">
 							<form:hidden path="id"/>
-							<h2 class="form-signin-heading" contenteditable="false">Cadastro</h2><br/>
-							<label class="">
-								Dados Pessoais
-							</label><br/>
-							<form:input path="name" class="form-control" placeholder="Nome Completo" required="true" autofocus="" contenteditable="false"/>
-							<!-- <input type="text" name="cpf" class="form-control" placeholder="CPF" required="" contenteditable="false">
-							
-							<label class="">
-								Data de Nascimento
-							</label><br/>
-							<input type="date" class="form-control">-->
-							<br/>
-							<label class="">
-								Dados de Login
-							</label><br/>
-							<form:input path="email" class="form-control" placeholder="Email" required="true" autofocus="" contenteditable="false"/>
-							<form:errors path="email" class="form-control alert-danger" role="alert" contenteditable="false"/><br/>
-							
-							<form:password path="password" class="form-control" placeholder="Senha" required="true" autofocus="" contenteditable="false"/>
-							<form:errors path="password" class="form-control alert-danger" role="alert" contenteditable="false"/><br/>
-							
-							<input type="password" name="passwordRepeat" class="form-control" placeholder="Confirme a senha" required="true" autofocus="" contenteditable="false" onchange="validarSenha()">
-							<div id="mostrarErroSenha">
-							
-							</div>							
-							<br/>
+							<h2 class="form-signin-heading" contenteditable="false">Cadastro de Fornecedor</h2><br/>
+
+							<form:input path="companyName" class="form-control" placeholder="Razão Social" required="true" autofocus="" contenteditable="false"/>
+							</br>
+							<form:input path="cnpj" class="form-control" placeholder="CNPJ" required="true" autofocus="" contenteditable="false"/>
+							<form:errors path="cnpj" class="form-control alert-danger" role="alert" contenteditable="false"/><br/>
+							</br>		
+							<form:input path="telephone" class="form-control" placeholder="Telefone" required="true" autofocus="" contenteditable="false"/>
+							<form:errors path="telephone" class="form-control alert-danger" role="alert" contenteditable="false"/><br/>
+							</br>
+							<input type="text" name="category" class="form-control" placeholder="Categoria" required="" contenteditable="false">
+							</br>
+							<input type="text" name="state" class="form-control" placeholder="Estado" required="" contenteditable="false">
+							</br>
+							<input type="text" name="city" class="form-control" placeholder="Cidade" required="" contenteditable="false">
+							</br>
+							<input type="text" name="address" class="form-control" placeholder="Endereço" required="" contenteditable="false">
+							</br>
+							<input type="text" name="name" class="form-control" placeholder="Nome" required="" contenteditable="false">
+							</br>
 							<button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button><br/>
+
+							</div>							
 						</form:form>
 						
 						<div id="whiteSpace">

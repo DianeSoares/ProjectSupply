@@ -57,7 +57,7 @@
                                 <a href="<%= request.getContextPath() %>/newUser">Cadastro de usuários</a>
                             </li>
                             <li>
-                                <a href="<%= request.getContextPath() %>/loginUser">Cadastro de fornecedores</a>
+                                <a href="<%= request.getContextPath() %>/newSupplier">Cadastro de fornecedores</a>
                             </li>
                         </ul>
                     </li>
