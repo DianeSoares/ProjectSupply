@@ -35,7 +35,11 @@
   <filter-mapping>
     <filter-name>Filtro</filter-name>
     <url-pattern>/newUser</url-pattern>
-
+    <url-pattern>/newSupplier</url-pattern>
+     <url-pattern>/editUser</url-pattern>
+      <url-pattern>/editSupplier</url-pattern>
+       <url-pattern>/deleteUser</url-pattern>
+        <url-pattern>/deleteSupplier</url-pattern>
     <dispatcher>REQUEST</dispatcher>
     <dispatcher>FORWARD</dispatcher>
   </filter-mapping>
