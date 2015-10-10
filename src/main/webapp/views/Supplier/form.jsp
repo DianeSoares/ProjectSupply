@@ -27,24 +27,24 @@
 							<form:hidden path="id"/>
 							<h2 class="form-signin-heading" contenteditable="false">Cadastro de Fornecedor</h2><br/>
 
-							<form:input path="companyName" class="form-control" placeholder="Razão Social" required="true" autofocus="" contenteditable="false"/>
-							</br>
+							<form:input path="company" class="form-control" placeholder="Razão Social" required="true" autofocus="" contenteditable="false"/>
+							<br>
 							<form:input path="cnpj" class="form-control" placeholder="CNPJ" required="true" autofocus="" contenteditable="false"/>
 							<form:errors path="cnpj" class="form-control alert-danger" role="alert" contenteditable="false"/><br/>
-							</br>		
+							<br>		
 							<form:input path="telephone" class="form-control" placeholder="Telefone" required="true" autofocus="" contenteditable="false"/>
 							<form:errors path="telephone" class="form-control alert-danger" role="alert" contenteditable="false"/><br/>
-							</br>
+							<br>
 							<input type="text" name="category" class="form-control" placeholder="Categoria" required="" contenteditable="false">
-							</br>
+							<br>
 							<input type="text" name="state" class="form-control" placeholder="Estado" required="" contenteditable="false">
-							</br>
+							<br>
 							<input type="text" name="city" class="form-control" placeholder="Cidade" required="" contenteditable="false">
-							</br>
+							<br>
 							<input type="text" name="address" class="form-control" placeholder="Endereço" required="" contenteditable="false">
-							</br>
+							<br>
 							<input type="text" name="name" class="form-control" placeholder="Nome" required="" contenteditable="false">
-							</br>
+							<br>
 							<button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button><br/>
 
 							</div>							

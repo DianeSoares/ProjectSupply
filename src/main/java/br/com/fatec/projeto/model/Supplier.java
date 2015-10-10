@@ -18,7 +18,7 @@ public class Supplier {
 		private int id;
 		
 		@Column
-		private String companyName;
+		private String company;
 		
 		@Column
 		@Size(min = 14, max = 14, message = "Digite um cnpj válido!")
@@ -62,12 +62,12 @@ public class Supplier {
 			this.name = name;
 		}
 		
-		public String getCompanyName() {
-			return companyName;
+		public String getCompany() {
+			return company;
 		}
 
-		public void setCompanyName(String companyName) {
-			this.companyName = companyName;
+		public void setCompany(String company) {
+			this.company = company;
 		}
 
 		public String getCnpj() {

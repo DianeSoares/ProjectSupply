@@ -23,7 +23,7 @@
 				
 				<div class="col-md-12">
 			<h3 class="text-primary">
-				Este site foi desenvolvido usando as seguintes ferramentas:
+				Este site foi desenvolvido utilizando as seguintes ferramentas:
 				
 			</h3>
 			<div class="row">
