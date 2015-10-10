@@ -35,15 +35,15 @@
 							<form:input path="telephone" class="form-control" placeholder="Telefone" required="true" autofocus="" contenteditable="false"/>
 							<form:errors path="telephone" class="form-control alert-danger" role="alert" contenteditable="false"/><br/>
 							<br>
-							<input type="text" name="category" class="form-control" placeholder="Categoria" required="" contenteditable="false">
+							<form:input path="category" type="text" name="category" class="form-control" placeholder="Categoria" required="" contenteditable="false"/>
 							<br>
-							<input type="text" name="state" class="form-control" placeholder="Estado" required="" contenteditable="false">
+							<form:input path="state" type="text" name="state" class="form-control" placeholder="Estado" required="" contenteditable="false"/>
 							<br>
-							<input type="text" name="city" class="form-control" placeholder="Cidade" required="" contenteditable="false">
+							<form:input path="city" type="text" name="city" class="form-control" placeholder="Cidade" required="" contenteditable="false"/>
 							<br>
-							<input type="text" name="address" class="form-control" placeholder="Endereço" required="" contenteditable="false">
+							<form:input path="address" type="text" name="address" class="form-control" placeholder="Endereço" required="" contenteditable="false"/>
 							<br>
-							<input type="text" name="name" class="form-control" placeholder="Nome" required="" contenteditable="false">
+							<form:input path="name" type="text" name="name" class="form-control" placeholder="Nome" required="" contenteditable="false"/>
 							<br>
 							<button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button><br/>
 

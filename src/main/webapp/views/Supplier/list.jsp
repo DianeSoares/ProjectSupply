@@ -37,7 +37,7 @@
 					  		<c:forEach var="supplier" items="${supplierList}" varStatus="status">
 					        	<tr>
 					        		<th scope="row">${status.index + 1}</th>
-									<td>${supplier.companyName}</td>
+									<td>${supplier.company}</td>
 									<td>${supplier.cnpj}</td>
 									<td>			
 										<table border="0">

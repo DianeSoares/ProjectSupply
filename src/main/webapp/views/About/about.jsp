@@ -21,7 +21,7 @@
 	            <div class="container-fluid">
 				<div class="row">
 				
-				<div class="col-md-12">
+				<div align="center" class="col-md-12">
 			<h3 class="text-primary">
 				Este site foi desenvolvido utilizando as seguintes ferramentas:
 				
