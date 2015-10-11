@@ -81,21 +81,22 @@ public class UserDAOImpl implements UserDAO {
 	@SuppressWarnings("rawtypes")
 	@Override
 	@Transactional
-	public boolean findByEmail(String email) {
+	public User findByEmail(String email) {
 		Session session = sessionFactory.openSession();
-		boolean userFound = false;
 		//Query using Hibernate Query Language
 		String SQL_QUERY =" from User as o where o.email=?";
 		Query query = session.createQuery(SQL_QUERY);
 		query.setParameter(0,email);
-		List list = query.list();
+		
+		@SuppressWarnings("unchecked")
+		List<User> listUser = (List<User>) query.list();
 
-		if ((list != null) && (list.size() > 0)) {
-			userFound= true;
+		if ((listUser != null) && (!listUser.isEmpty())) {
+			return listUser.get(0);
+		}else{
+			return null;        
+
 		}
-
-		session.close();
-		return userFound;        
 	}
 	
 	@SuppressWarnings("rawtypes")

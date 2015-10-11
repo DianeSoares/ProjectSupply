@@ -15,9 +15,15 @@ public class HomeController {
 		ModelAndView model = new ModelAndView("home");
 		return model;
 	}
+	
+	@RequestMapping("/data")
+	public ModelAndView data() throws Exception {
+		ModelAndView model = new ModelAndView("Data/data");
+		return model;
+	}
 
 	@RequestMapping("/about")
-	public ModelAndView contact() throws Exception {
+	public ModelAndView about() throws Exception {
 		ModelAndView model = new ModelAndView("About/about");
 		return model;
 	}

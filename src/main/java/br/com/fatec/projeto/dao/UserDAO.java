@@ -32,7 +32,7 @@ public interface UserDAO {
 
 	public void remove(int id);
 	
-	public boolean findByEmail(String email);
+	public User findByEmail(String email);
 	
 	public boolean checkLogin(String email, String password);
 	

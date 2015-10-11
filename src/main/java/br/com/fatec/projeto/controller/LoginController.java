@@ -38,7 +38,9 @@ public class LoginController {
 		
 		if (userDao.checkLogin(user.getEmail(), user.getPassword()) == true) {
 			//dados corretos
-			session.setAttribute("usuarioLogado", user);
+			User userFound = new User();
+			userFound = userDao.findByEmail(user.getEmail());
+			session.setAttribute("usuarioLogado", userFound);
 			ModelAndView model = new ModelAndView("Login/login");
 			return new ModelAndView("redirect:/");
 		}
