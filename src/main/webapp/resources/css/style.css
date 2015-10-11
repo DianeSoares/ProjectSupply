@@ -202,13 +202,9 @@ h2 {
 }
 
 /*cores do links*/
-a {
-    color: #458B74;
-    text-decoration: none;
-}
 a:hover {
 	text-decoration: underline; 
-	color: #66CDAA
+	color: #0000a0
 }
 
 

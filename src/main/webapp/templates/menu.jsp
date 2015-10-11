@@ -43,7 +43,10 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-shopping-cart"></i> Estoque <i class="fa fa-fw fa-caret-down"></i></a>
                          <ul id="demo" class="collapse">
                             <li>
-                                <a href="#">Cadastro de material</a>
+                                <a href="<%= request.getContextPath() %>/inventoryRaw">Cadastro de matéria prima</a>
+                            </li>
+                             <li>
+                                <a href="#">Cadastro de produto</a>
                             </li>
                             <li>
                                 <a href="#">Relatório de estoque</a>
