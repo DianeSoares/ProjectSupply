@@ -23,13 +23,13 @@
 				
 				<div align="center" class="col-md-12">
 			<h3 class="text-primary">
-				Cadastro de materiais				
+				Cadastro de insumos				
 			</h3><br><br>
 			<div class="row">
 			<div class="col-md-6">
-			<p><a href="#"><span class="glyphicon glyphicon-plus fa-lg"></span> Cadastro de matéria prima</a></p>	 
+			<p><a href="#"><span class="glyphicon glyphicon-plus fa-lg"></span> Cadastro de insumos</a></p>	 
 			  
-			<p><a href="#"><span class="glyphicon glyphicon-list-alt fa-lg"></span>   Visualizar matérias primas cadastradas  </a></p>
+			<p><a href="#"><span class="glyphicon glyphicon-list-alt fa-lg"></span> Visualizar insumos cadastrados  </a></p>
 			 
 				</div>
 				<div class="col-md-6">
