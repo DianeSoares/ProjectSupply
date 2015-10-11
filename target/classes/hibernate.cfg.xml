@@ -8,5 +8,6 @@
     <property name="show_sql">true</property>  
     <mapping class="br.com.fatec.projeto.model.User"/>
     <mapping class="br.com.fatec.projeto.model.Supplier"/>
+    <mapping class="br.com.fatec.projeto.model.RawMaterial"/>   
   </session-factory>
 </hibernate-configuration>

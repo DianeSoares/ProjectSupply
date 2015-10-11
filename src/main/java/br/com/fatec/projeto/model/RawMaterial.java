@@ -2,6 +2,9 @@ package br.com.fatec.projeto.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -19,7 +22,19 @@ public class RawMaterial {
 	
 	@Column
 	private String category;
+
+	@Column
+	private String brand;
 	
+	@Column
+	private int unit;
+	
+	@Column
+	private Float price;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID")
 	public int getId() {
 		return id;
 	}
@@ -60,31 +75,20 @@ public class RawMaterial {
 		this.brand = brand;
 	}
 
-	public String getUnit() {
+	public int getUnit() {
 		return unit;
 	}
 
-	public void setUnit(String unit) {
+	public void setUnit(int unit) {
 		this.unit = unit;
 	}
 
-	public String getUnitPrice() {
-		return unitPrice;
+	public Float getPrice() {
+		return price;
 	}
 
-	public void setUnitPrice(String unitPrice) {
-		this.unitPrice = unitPrice;
+	public void setPrice(Float price) {
+		this.price = price;
 	}
-
-	@Column
-	private String brand;
 	
-	@Column
-	private String unit;
-	
-	@Column
-	private String unitPrice;
-	
-	
-
 }

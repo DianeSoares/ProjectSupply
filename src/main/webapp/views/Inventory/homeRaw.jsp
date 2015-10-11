@@ -27,9 +27,9 @@
 			</h3><br><br>
 			<div class="row">
 			<div class="col-md-6">
-			<p><a href="#"><span class="glyphicon glyphicon-plus fa-lg"></span> Cadastro de insumos</a></p>	 
+			<p><a href="<%= request.getContextPath() %>/newRawMaterial"><span class="glyphicon glyphicon-plus fa-lg"></span> Cadastro de insumos</a></p>	 
 			  
-			<p><a href="#"><span class="glyphicon glyphicon-list-alt fa-lg"></span> Visualizar insumos cadastrados  </a></p>
+			<p><a href="<%= request.getContextPath() %>/listRawMaterial"><span class="glyphicon glyphicon-list-alt fa-lg"></span> Visualizar insumos cadastrados  </a></p>
 			 
 				</div>
 				<div class="col-md-6">
