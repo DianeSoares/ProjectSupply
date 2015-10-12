@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,7 +20,9 @@ public class RawMaterial {
 	private String description;
 	
 	@Column
-	private String supplier;
+	@ManyToOne
+    @JoinColumn(name="supplier")
+	private Supplier supplier;
 	
 	@Column
 	private String category;
@@ -51,11 +55,11 @@ public class RawMaterial {
 		this.description = description;
 	}
 
-	public String getSupplier() {
+	public Supplier getSupplier() {
 		return supplier;
 	}
 
-	public void setSupplier(String supplier) {
+	public void setSupplier(Supplier supplier) {
 		this.supplier = supplier;
 	}
 

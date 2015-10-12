@@ -1,6 +1,7 @@
 package br.com.fatec.projeto.model;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +14,7 @@ import javax.validation.constraints.Size;
 
 
 @Entity
-@Table(name = "SUPPLIERS")
+@Table(name = "SUPPLIER")
 public class Supplier {
 	
 
@@ -45,6 +46,9 @@ public class Supplier {
 		@Column
 		@Size(min = 8, max = 12, message = "Digite um número de telefone válido.")
 		private String telephone;
+		
+		 @OneToMany(mappedBy="supplier")
+		private Set<RawMaterial> rawMaterial;
 		
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
