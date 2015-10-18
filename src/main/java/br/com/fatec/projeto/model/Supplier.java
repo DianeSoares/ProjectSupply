@@ -1,5 +1,7 @@
 package br.com.fatec.projeto.model;
 
+import java.beans.Transient;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -8,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -47,9 +50,12 @@ public class Supplier {
 		@Size(min = 8, max = 12, message = "Digite um número de telefone válido.")
 		private String telephone;
 		
-		 @OneToMany(mappedBy="supplier")
-		private Set<RawMaterial> rawMaterial;
-		
+		/**
+		@OneToMany
+		@JoinColumn(name = "RAW", nullable = false)
+		private List<RawMaterial> rawMaterial = new ArrayList<RawMaterial>();
+		**/	
+	
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Column(name = "ID")
@@ -124,5 +130,14 @@ public class Supplier {
 		public void setTelephone(String telephone) {
 			this.telephone = telephone;
 		}
+		
+	/**	
+		public Set<RawMaterial> getRawMaterial() {
+			return rawMaterial;
+		}
 
+		public void setRawMaterial(Set<RawMaterial> rawMaterial) {
+			this.rawMaterial = rawMaterial;
+		}
+**/
 }
