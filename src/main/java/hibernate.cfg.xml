@@ -9,5 +9,7 @@
     <mapping class="br.com.fatec.projeto.model.User"/>
     <mapping class="br.com.fatec.projeto.model.Supplier"/>
     <mapping class="br.com.fatec.projeto.model.RawMaterial"/>   
+    <mapping class="br.com.fatec.projeto.model.Product"/>   
+    
   </session-factory>
 </hibernate-configuration>

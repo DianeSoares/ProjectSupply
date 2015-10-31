@@ -19,7 +19,7 @@ public class Product {
 	private String name;
 	
 	@Column
-	private String unit;
+	private int unit;
 	
 	@Column
 	private int sold;
@@ -43,11 +43,11 @@ public class Product {
 		this.name = name;
 	}
 
-	public String getUnit() {
+	public int getUnit() {
 		return unit;
 	}
 
-	public void setUnit(String unit) {
+	public void setUnit(int unit) {
 		this.unit = unit;
 	}
 

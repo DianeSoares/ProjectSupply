@@ -77,12 +77,12 @@
 	                                        <i class="fa fa-tasks fa-5x"></i>
 	                                    </div>
 	                                    <div class="col-xs-9 text-right">
-	                                        <div class="huge">0</div>
+	                                        <div class="huge">${product}</div>
 	                                        <div> Produtos </div>
 	                                    </div>
 	                                </div>
 	                            </div>
-	                            <a href="#">
+	                            <a href="<%= request.getContextPath() %>/listProduct">
 	                                <div class="panel-footer">
 	                                    <span class="pull-left"> Detalhes </span>
 	                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

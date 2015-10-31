@@ -46,7 +46,7 @@
                                 <a href="<%= request.getContextPath() %>/inventoryRaw">Cadastro de matéria prima</a>
                             </li>
                              <li>
-                                <a href="#">Cadastro de produto</a>
+                                <a href="<%= request.getContextPath() %>/newProduct">Cadastro de produto</a>
                             </li>
                             <li>
                                 <a href="#">Relatório de estoque</a>
