@@ -1,7 +1,6 @@
 package br.com.fatec.projeto.controller;
 
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -15,13 +14,18 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.fatec.projeto.dao.RawMaterialDAO;
+import br.com.fatec.projeto.dao.SupplierDAO;
 import br.com.fatec.projeto.model.RawMaterial;
+import br.com.fatec.projeto.model.Supplier;
 
 @Controller
 public class RawMaterialController {
 	
 	@Autowired
 	private RawMaterialDAO rawMaterialDao;
+	
+	@Autowired
+	private SupplierDAO supplierDAO;
 
 
 	@RequestMapping("/listRawMaterial")
@@ -34,8 +38,13 @@ public class RawMaterialController {
 
 	@RequestMapping(value = "/newRawMaterial", method = RequestMethod.GET)
 	public ModelAndView newRawMaterial() {
+		
+		List<Supplier> listSupplier = supplierDAO.findAll();
+				
 		ModelAndView model = new ModelAndView("RawMaterial/form");
 		model.addObject("rawMaterial", new RawMaterial());
+		
+		model.addObject("listSupplier", listSupplier);
 		return model;
 	}
 
@@ -43,8 +52,11 @@ public class RawMaterialController {
 	public ModelAndView editRawMaterial(HttpServletRequest request) {
 		int rawMaterialId = Integer.parseInt(request.getParameter("id"));
 		RawMaterial rawMaterial = rawMaterialDao.findById(rawMaterialId);
+		List<Supplier> listSupplier = supplierDAO.findAll();
 		ModelAndView model = new ModelAndView("RawMaterial/form");
 		model.addObject("rawMaterial", rawMaterial);
+		model.addObject("listSupplier", listSupplier);
+
 		return model;
 	}
 

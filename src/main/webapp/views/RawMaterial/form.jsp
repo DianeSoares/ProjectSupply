@@ -29,11 +29,20 @@
 
 							<form:input path="description" class="form-control" placeholder="Descrição" required="true" autofocus="" contenteditable="false"/>
 							<br>
-							<form:input path="supplier" class="form-control" placeholder="Fornecedor" required="true" autofocus="" contenteditable="false"/>
+							
+							<form:select path="supplier" class="form-control">
+								<c:forEach var="supplier" items="${listSupplier}" varStatus="status">
+									<form:option value="${supplier.id}" label="${supplier.company}"/>
+								</c:forEach>
+							</form:select> 
 							<br>		
-							<form:input path="category" class="form-control" placeholder="categoria" required="true" autofocus="" contenteditable="false"/>
-							<br>
-							<form:input path="brand" type="text" name="brand" class="form-control" placeholder="Marca" required="" contenteditable="false"/>
+							<form:select path="measure" class="form-control">
+									<form:option value="Metros" label="Metros"/>
+									<form:option value="Metros" label="Unidade"/>
+									<form:option value="Metros" label="Kg"/>
+									<form:option value="Metros" label="Litros"/>
+									
+							</form:select>
 							<br>
 							<form:input path="unit" type="text" name="unit" class="form-control" placeholder="Unidade" required="" contenteditable="false"/>
 							<br>

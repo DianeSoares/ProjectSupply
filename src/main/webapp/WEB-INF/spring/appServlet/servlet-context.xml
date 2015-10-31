@@ -57,15 +57,15 @@
 	    </constructor-arg>
 	</bean>    	
 	
-	<bean id="supplierDao" class="br.com.fatec.projeto.dao.SupplierDAOImpl">
+	<!--  <bean id="supplierDao" class="br.com.fatec.projeto.dao.SupplierDAOImpl">
 	    <constructor-arg>
 	        <ref bean="sessionFactory" />
 	    </constructor-arg>
-	</bean>    
+	</bean> -->   
 	
 	<bean id="rawMaterialDao" class="br.com.fatec.projeto.dao.RawMaterialDAOImpl">
 	    <constructor-arg>
 	        <ref bean="sessionFactory" />
 	    </constructor-arg>
-	</bean>    		
+	</bean>   		
 </beans>

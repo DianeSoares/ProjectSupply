@@ -14,7 +14,9 @@ import javax.persistence.Table;
 @Table(name = "RAW")
 public class RawMaterial {
 	
-	@Column
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID")
 	private int id;
 	
 	@Column
@@ -28,10 +30,7 @@ public class RawMaterial {
 	**/
 	
 	@Column
-	private String category;
-
-	@Column
-	private String brand;
+	private String measure;
 	
 	@Column
 	private int unit;
@@ -39,9 +38,17 @@ public class RawMaterial {
 	@Column
 	private Float price;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID")
+	@Column(name = "supplier")
+	private int supplier;
+
+	public int getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(int supplier) {
+		this.supplier = supplier;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -68,20 +75,12 @@ public class RawMaterial {
 	}
 	**/
 
-	public String getCategory() {
-		return category;
+	public String getMeasure() {
+		return measure;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public String getBrand() {
-		return brand;
-	}
-
-	public void setBrand(String brand) {
-		this.brand = brand;
+	public void setMeasure(String measure) {
+		this.measure = measure;
 	}
 
 	public int getUnit() {

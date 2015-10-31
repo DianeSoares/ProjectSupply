@@ -35,8 +35,8 @@ public class LoginController {
 
 	@RequestMapping(value = "/checkLogin", method = RequestMethod.POST)
 	public ModelAndView checkLogin(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
-		
-		if (userDao.checkLogin(user.getEmail(), user.getPassword()) == true) {
+		boolean check = userDao.checkLogin(user.getEmail(), user.getPassword());
+		if (check == true) {
 			//dados corretos
 			User userFound = new User();
 			userFound = userDao.findByEmail(user.getEmail());
