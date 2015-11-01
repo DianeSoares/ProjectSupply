@@ -25,7 +25,7 @@
 					<div class="container droppedHover">
 						<form:form action="saveRawMaterial" name="f" method="post" modelAttribute="rawMaterial" commandName="rawMaterial" class="form-signin" role="form">
 							<form:hidden path="id"/>
-							<h2 class="form-signin-heading" contenteditable="false">Cadastro de Insumo</h2><br/>
+							<h2 contenteditable="false">Cadastro de Insumo</h2><br/>
 
 							<form:input path="description" class="form-control" placeholder="Descrição" required="true" autofocus="" contenteditable="false"/>
 							<br>
@@ -36,7 +36,7 @@
 								</c:forEach>
 							</form:select> 
 							<br>		
-							<form:select path="measure" class="form-control">
+							<h4>Unidade de medida</h4><form:select path="measure" class="form-control">
 									<form:option value="Metros" label="Metros"/>
 									<form:option value="Metros" label="Unidade"/>
 									<form:option value="Metros" label="Kg"/>
@@ -44,7 +44,7 @@
 									
 							</form:select>
 							<br>
-							<form:input path="unit" type="text" name="unit" class="form-control" placeholder="Unidade" required="" contenteditable="false"/>
+							<form:input path="unit" type="text" name="unit" class="form-control" placeholder="Quantidade" required="" contenteditable="false"/>
 							<br>
 							<form:input path="price" type="text" name="price" class="form-control" placeholder="Preço por unidade" required="" contenteditable="false"/>
 							<br>

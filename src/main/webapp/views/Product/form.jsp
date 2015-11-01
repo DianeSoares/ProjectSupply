@@ -6,7 +6,7 @@
 
 <html>
 <head>
-<title>Cadastro de Fornecedor</title>
+<title>Cadastro de Produto</title>
 
 <%@ include file="/templates/header.jsp"%>
 </head>
@@ -31,7 +31,7 @@
 							<br>
 							<form:input path="unit" class="form-control" placeholder="Unidades" required="true" autofocus="" contenteditable="false"/>
 							<br>		
-							<form:input path="sold" class="form-control" placeholder="Vendido" required="true" autofocus="" contenteditable="false"/>
+							<form:input path="sold" class="form-control" placeholder="Vendido" required="true" autofocus="" contenteditable="false"/><br>
 							
 							<button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button><br/>
 

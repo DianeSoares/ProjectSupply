@@ -26,7 +26,7 @@
 				</c:if>
 				<div align="center" >
 					    <form action="checkLogin" class="form-signin" method="POST">       
-					      <h2 class="form-signin-heading">Please login</h2>
+					      <h2>Login</h2>
 					      <input type="text" class="form-control" name="email" placeholder="Email" required="" autofocus="" />
 					      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
 					      <label class="checkbox">
