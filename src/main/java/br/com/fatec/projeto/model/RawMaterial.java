@@ -33,6 +33,9 @@ public class RawMaterial {
 	private String measure;
 	
 	@Column
+	private String category;
+
+	@Column
 	private int unit;
 	
 	@Column
@@ -81,6 +84,14 @@ public class RawMaterial {
 
 	public void setMeasure(String measure) {
 		this.measure = measure;
+	}
+	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public int getUnit() {

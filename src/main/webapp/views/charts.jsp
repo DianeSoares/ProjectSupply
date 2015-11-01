@@ -44,7 +44,7 @@
 		            <div class="col-md-9">
 		                <div class="panel panel-danger">
 		                    <div class="panel-heading">
-		                        <h3 class="panel-title">Highchart Chart 1</h3>
+		                        <h3 class="panel-title">Estoque</h3>
 		                    </div>
 		                    <div id="chart1-container" style="min-width: 300px; max-width: 500px;  height: 300px; margin: 0 auto"></div>
 		                </div>

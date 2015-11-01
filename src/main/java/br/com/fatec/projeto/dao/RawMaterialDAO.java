@@ -13,4 +13,6 @@ public interface RawMaterialDAO {
 	public void saveOrUpdate(RawMaterial rawMaterial);
 
 	public void remove(int id);
+
+	public List<RawMaterial> findByCategory(String category);
 }

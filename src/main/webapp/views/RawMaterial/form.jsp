@@ -35,7 +35,13 @@
 									<form:option value="${supplier.id}" label="${supplier.company}"/>
 								</c:forEach>
 							</form:select> 
-							<br>		
+							<br>
+							<h4>Classe</h4><form:select path="category" class="form-control">
+									<form:option value="A" label="A"/>
+									<form:option value="B" label="B"/>
+									<form:option value="C" label="C"/>
+									
+							</form:select>		
 							<h4>Unidade de medida</h4><form:select path="measure" class="form-control">
 									<form:option value="Metros" label="Metros"/>
 									<form:option value="Metros" label="Unidade"/>

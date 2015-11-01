@@ -48,7 +48,7 @@ public class RawMaterialDAOImpl implements RawMaterialDAO {
 	@Override
 	@Transactional
 	public RawMaterial findById(int id) {
-		String hql = "from RawMaterial where id=" + id;
+		String hql = "from raw where id=" + id;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 
 		@SuppressWarnings("unchecked")
@@ -56,6 +56,23 @@ public class RawMaterialDAOImpl implements RawMaterialDAO {
 
 		if (listRawMaterial != null && !listRawMaterial.isEmpty()) {
 			return listRawMaterial.get(0);
+		}
+		return null;
+	}
+	
+	@Override
+	@Transactional
+	public List<RawMaterial> findByCategory(String category) {
+		Session session = sessionFactory.openSession();
+		String SQL_QUERY =" from RawMaterial as o where o.category=?";
+		Query query = session.createQuery(SQL_QUERY);
+		query.setParameter(0,category);
+		
+		@SuppressWarnings("unchecked")
+		List<RawMaterial> listRawMaterial = (List<RawMaterial>) query.list();
+
+		if (listRawMaterial != null && !listRawMaterial.isEmpty()) {
+			return listRawMaterial;
 		}
 		return null;
 	}
