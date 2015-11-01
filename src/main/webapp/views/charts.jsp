@@ -40,23 +40,24 @@
 		<div class="row">
 		    <div class="col-md-12">
 		        <div class="row">
-		            <div class="col-md-4">
+		        	<h2>Gráficos baseados em indicadores</h2><br>
+		            <div class="col-md-9">
 		                <div class="panel panel-danger">
 		                    <div class="panel-heading">
 		                        <h3 class="panel-title">Highchart Chart 1</h3>
 		                    </div>
 		                    <div id="chart1-container" style="min-width: 300px; max-width: 500px;  height: 300px; margin: 0 auto"></div>
 		                </div>
-		            </div>
-		            <div class="col-md-4">
+		            </div><br>
+		            <div class="col-md-9">
 		                <div class="panel panel-primary">
 		                    <div class="panel-heading">
 		                        <h3 class="panel-title">Highchart Chart 2</h3>
 		                    </div>
 		                    <div id="chart2-container" style="min-width: 300px; max-width: 500px;  height: 300px; margin: 0 auto"></div>
 		                </div>
-		            </div>
-		            <div class="col-md-4">
+		            </div><br>
+		            <div class="col-md-9">
 		                <div class="panel panel-warning">
 		                    <div class="panel-heading">
 		                        <h3 class="panel-title">Highchart Chart 3</h3>

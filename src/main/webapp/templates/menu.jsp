@@ -37,7 +37,7 @@
                         <a href="<%= request.getContextPath() %>"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="<%= request.getContextPath() %>/data"><i class="fa fa-fw fa-bar-chart-o"></i> Dados </a>
+                        <a href="<%= request.getContextPath() %>/charts"><i class="fa fa-fw fa-bar-chart-o"></i> Dados </a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-shopping-cart"></i> Estoque <i class="fa fa-fw fa-caret-down"></i></a>
