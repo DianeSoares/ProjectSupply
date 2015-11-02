@@ -54,8 +54,19 @@ public class InventoryController {
 		return model;
 	}
 	
+	@RequestMapping("/Estocagem")
+	public ModelAndView acuracidade() {
+
+		ModelAndView model = new ModelAndView("Inventory/estocagem");
+		double total = total();
+		model.addObject("rawMaterial", new RawMaterial());
+
+		model.addObject("total", total);
+		return model;
+	}
+	
 	@RequestMapping("/Acuracidade")
-	public ModelAndView teste() {
+	public ModelAndView estocagem() {
 
 		ModelAndView model = new ModelAndView("Inventory/teste");
 		double total = total();
@@ -66,6 +77,30 @@ public class InventoryController {
 		model.addObject("accuracyA", categoryA);
 		model.addObject("accuracyB", categoryB);
 		model.addObject("accuracyC", categoryC);
+		model.addObject("total", total);
+		return model;
+	}
+	
+	@RequestMapping(value = "/calcEstocagem", method = RequestMethod.GET)
+	public ModelAndView calcCobertura(HttpServletRequest request) throws Exception {
+
+		//Nenhum campo pode estar vazio
+		Double sales = Double.parseDouble(request.getParameter("salesMonth"));  
+		Double total = Double.parseDouble(request.getParameter("total"));
+
+		Double result = calcCobertura(sales, total);
+		
+		ModelAndView model = new ModelAndView("Inventory/indicatorCobertura");
+		model.addObject("result", result);	
+		return model;
+	}
+	
+	@RequestMapping("/Cobertura")
+	public ModelAndView cobertura() {
+
+		ModelAndView model = new ModelAndView("Inventory/cobertura");
+		double total = total();
+		model.addObject("rawMaterial", new RawMaterial());
 		model.addObject("total", total);
 		return model;
 	}
@@ -156,6 +191,20 @@ public class InventoryController {
 		
 		return result1;
 		
+	}
+	
+	private Double calcStock(Double spaceTot, Double total) {
+		// TODO Auto-generated method stub
+		
+		Double result = (total * 100) / spaceTot;
+		return result;
+	}
+	
+	private Double calcCobertura(Double sales, Double total) {
+		// TODO Auto-generated method stub
+		
+		Double result = (total * 4.28) / sales;
+		return result;
 	}
 
 }
