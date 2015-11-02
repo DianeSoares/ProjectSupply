@@ -3,11 +3,7 @@ package br.com.fatec.projeto.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-
-import org.hibernate.dialect.function.StandardAnsiSqlAggregationFunctions.SumFunction;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
-import org.springframework.http.server.ServletServerHttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,6 +30,22 @@ public class InventoryController {
 		return model;
 	}
 	
+	/*CAlculando acuracidade do estoque */
+	@RequestMapping("/Accuracy")
+	public ModelAndView accuracy() {
+		ModelAndView model = new ModelAndView("Inventory/accuracy");
+		double total = total();
+		double categoryC = categoryC();
+		double categoryB = categoryB();
+		double categoryA =categoryA();
+		model.addObject("rawMaterial", new RawMaterial());
+		model.addObject("accuracyA", categoryA);
+		model.addObject("accuracyB", categoryB);
+		model.addObject("accuracyC", categoryC);
+		model.addObject("total", total);
+		return model;
+	}
+	
 	@RequestMapping(value = "/calcAccuracy", method = RequestMethod.GET)
 	public ModelAndView calcAccuracy(HttpServletRequest request) throws Exception {
 
@@ -54,56 +66,63 @@ public class InventoryController {
 		return model;
 	}
 	
-	@RequestMapping("/Estocagem")
+	/*Fim acuracidade*/
+	
+	
+	/*Calculando utilização da capacidade de estocagem*/
+	@RequestMapping("/Storage")
 	public ModelAndView acuracidade() {
 
-		ModelAndView model = new ModelAndView("Inventory/estocagem");
+		ModelAndView model = new ModelAndView("Inventory/storage");
 		double total = total();
 		model.addObject("rawMaterial", new RawMaterial());
-
 		model.addObject("total", total);
 		return model;
 	}
-	
-	@RequestMapping("/Acuracidade")
-	public ModelAndView estocagem() {
 
-		ModelAndView model = new ModelAndView("Inventory/teste");
-		double total = total();
-		double categoryC = categoryC();
-		double categoryB = categoryB();
-		double categoryA =categoryA();
-		model.addObject("rawMaterial", new RawMaterial());
-		model.addObject("accuracyA", categoryA);
-		model.addObject("accuracyB", categoryB);
-		model.addObject("accuracyC", categoryC);
-		model.addObject("total", total);
+	@RequestMapping(value = "/calcStorage", method = RequestMethod.GET)
+	public ModelAndView calcCoverage(HttpServletRequest request) throws Exception {
+		//Nenhum campo pode estar vazio
+		Double spaceTot = Double.parseDouble(request.getParameter("spaceTot"));  
+		Double total = Double.parseDouble(request.getParameter("total"));
+
+		Double result = calcStock(spaceTot, total);
+		
+		ModelAndView model = new ModelAndView("Inventory/indicatorStorage");
+		model.addObject("result", result);	
 		return model;
 	}
 	
-	@RequestMapping(value = "/calcEstocagem", method = RequestMethod.GET)
-	public ModelAndView calcCobertura(HttpServletRequest request) throws Exception {
-
+	/*Fim capacidade de estocagem*/
+	
+	/*Calculando cobertura do estoque */
+	
+	@RequestMapping(value = "/calcCoverage", method = RequestMethod.GET)
+	public ModelAndView calcStorage(HttpServletRequest request) throws Exception {
 		//Nenhum campo pode estar vazio
 		Double sales = Double.parseDouble(request.getParameter("salesMonth"));  
 		Double total = Double.parseDouble(request.getParameter("total"));
 
 		Double result = calcCobertura(sales, total);
 		
-		ModelAndView model = new ModelAndView("Inventory/indicatorCobertura");
+		ModelAndView model = new ModelAndView("Inventory/indicatorCoverage");
 		model.addObject("result", result);	
 		return model;
 	}
 	
-	@RequestMapping("/Cobertura")
+	@RequestMapping("/Coverage")
 	public ModelAndView cobertura() {
-
-		ModelAndView model = new ModelAndView("Inventory/cobertura");
+		ModelAndView model = new ModelAndView("Inventory/coverage");
 		double total = total();
 		model.addObject("rawMaterial", new RawMaterial());
 		model.addObject("total", total);
 		return model;
 	}
+	
+	/*Fim cobertura de estoque*/
+	
+	
+	/*Métodos para efetuar os calculos*/
 	
 	private double categoryA(){	
 		List<RawMaterial> listA = rawMaterialDao.findByCategory("A");
@@ -184,25 +203,18 @@ public class InventoryController {
 	}
 	
 	private Double calcVal(Double v1, Double v2,Double v3, Double At, Double Bt, Double Ct){
-		
-		Double result = (v1 * At) + (v2 * Bt) + (v3 * Ct);
-		
+		Double result = (v1 * At) + (v2 * Bt) + (v3 * Ct);	
 		Double result1 = result * 100;
-		
 		return result1;
 		
 	}
 	
-	private Double calcStock(Double spaceTot, Double total) {
-		// TODO Auto-generated method stub
-		
+	private Double calcStock(Double spaceTot, Double total) {	
 		Double result = (total * 100) / spaceTot;
 		return result;
 	}
 	
 	private Double calcCobertura(Double sales, Double total) {
-		// TODO Auto-generated method stub
-		
 		Double result = (total * 4.28) / sales;
 		return result;
 	}
