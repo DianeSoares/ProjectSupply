@@ -6,7 +6,7 @@
 
 <html>
 <head>
-<title>Login</title>
+<title>Inventário</title>
 <%@ include file="/templates/header.jsp"%>
 
 </head>

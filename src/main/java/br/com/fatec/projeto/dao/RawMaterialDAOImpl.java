@@ -48,7 +48,7 @@ public class RawMaterialDAOImpl implements RawMaterialDAO {
 	@Override
 	@Transactional
 	public RawMaterial findById(int id) {
-		String hql = "from raw where id=" + id;
+		String hql = "from RawMaterial where id=" + id;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 
 		@SuppressWarnings("unchecked")
