@@ -76,6 +76,23 @@ public class RawMaterialDAOImpl implements RawMaterialDAO {
 		}
 		return null;
 	}
+	
+	@Override
+	@Transactional
+	public List<RawMaterial> findBySupplier(int supplier) {
+		Session session = sessionFactory.openSession();
+		String SQL_QUERY =" from RawMaterial as o where o.supplier=?";
+		Query query = session.createQuery(SQL_QUERY);
+		query.setParameter(0,supplier);
+		
+		@SuppressWarnings("unchecked")
+		List<RawMaterial> listRawMaterial = (List<RawMaterial>) query.list();
+
+		if (listRawMaterial != null && !listRawMaterial.isEmpty()) {
+			return listRawMaterial;
+		}
+		return null;
+	}
 
 	@Override
 	@Transactional

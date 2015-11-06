@@ -1,5 +1,6 @@
 package br.com.fatec.projeto.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
@@ -8,8 +9,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import br.com.fatec.projeto.dao.ProductDAO;
 import br.com.fatec.projeto.dao.RawMaterialDAO;
+import br.com.fatec.projeto.dao.SupplierDAO;
 import br.com.fatec.projeto.model.Product;
 import br.com.fatec.projeto.model.RawMaterial;
 import br.com.fatec.projeto.model.Supplier;
@@ -25,6 +30,9 @@ public class HomeController {
 	
 	@Autowired
 	private ProductDAO productDao;
+	
+	@Autowired
+	private SupplierDAO supplierDao;
 
 	@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
@@ -34,7 +42,17 @@ public class HomeController {
 		List<Product> prod = productDao.findAll();
 		int unit = calcRaw(rawMaterial);
 		int unitProduct = calcProduct(prod);
+		
+		RawMaterial rawMinor = searchMinorRaw(rawMaterial);
+		RawMaterial rawMajor = searchMajorRaw(rawMaterial);
 
+
+		if (rawMinor != null && rawMajor != null) {
+			model.addObject("raw", rawMinor.getUnit());
+			model.addObject("rawMajor", rawMajor.getUnit());
+			model.addObject("rawMajorM", rawMajor.getDescription());
+			model.addObject("rawNameM", rawMinor.getDescription());
+		}
 		model.addObject("rawMaterial", unit);
 		model.addObject("product", unitProduct);
 
@@ -52,6 +70,84 @@ public class HomeController {
 		ModelAndView model = new ModelAndView("About/about");
 		return model;
 	}
+	
+	@SuppressWarnings("null")
+	@RequestMapping("/json")
+	public ModelAndView json(){
+		ModelAndView model = new ModelAndView("teste");
+
+		  /*Gson gson = new GsonBuilder().create();
+	      gson.toJson("Hello", System.out);
+	      gson.toJson(123, System.out);
+	      */
+		  List<Supplier> supplier = supplierDao.findAll();
+		 
+		  List<String> name = new ArrayList<String>();
+		  List<Integer> valor = new ArrayList<Integer>();
+		  
+		  for (int i = 0; i < supplier.size(); i++) {
+			  name.add(supplier.get(i).getCompany());
+			  valor.add(calcSupplier(supplier.get(i).getId()));
+		  }
+	      
+	     
+		       
+		model.addObject("listName", name);
+	    model.addObject("listValor", valor);
+
+		return model;
+	       
+	      
+	     /* 
+		
+		Map<String, String> data1 = new HashMap<String,String>();
+        data1.put( "key", "Computers");
+        data1.put( "value","114");
+ 
+        Map<String, Object> data2 = new HashMap<String, Object>();
+        data2.put( "key", "Electronics");
+        data2.put( "value","214");
+ 
+        Map<String, Object> data3 = new HashMap<String, Object>();
+        data3.put( "key", "Mechanical");
+        data3.put( "value","514");
+ 
+        JSONObject json1 = new JSONObject(data1);
+        JSONObject json2 = new JSONObject(data2);
+        JSONObject json3 = new JSONObject(data3);
+ 
+        JSONArray array = new JSONArray();
+        array.put(json1);
+        array.put(json2);
+        array.put(json3);
+ 
+        JSONObject finalObject = new JSONObject();
+        finalObject.put("student_data", array);
+ 
+        response.getOutputHeaders().putSingle("Access-Control-Allow-Origin", "*");
+        return Response.status(200).entity(finalObject.toString()).build();
+		return null;
+		
+		*/
+		
+	}
+	
+	private int calcSupplier(int supplier){	      
+
+		List<RawMaterial> rawMaterial = rawMaterialDao.findBySupplier(supplier);
+		int totalRaw = 0;
+		if (rawMaterial != null) {
+			for (int i = 0; i < rawMaterial.size(); i++) {
+				int unitRaw = rawMaterial.get(i).getUnit();
+				totalRaw+=unitRaw;
+				
+			}
+			
+		}    
+			
+		return totalRaw;
+		
+	}
 
 	private int calcRaw(List<RawMaterial> rawMaterial){
 		int value = 0;
@@ -60,10 +156,41 @@ public class HomeController {
 			int unit = raw.getUnit();
 			value = value + unit;
 		}
-		
-	
 		return  value;
 		
+	}
+	
+	private RawMaterial searchMinorRaw(List<RawMaterial> rawMaterial){
+		int value = 0;
+		RawMaterial rawMinor = null;
+		for (int i = 0; i < rawMaterial.size(); i++) {
+			RawMaterial raw = rawMaterial.get(i);
+			int unit = raw.getUnit();
+			
+			if (value == 0 || unit < value) {
+				value=unit;
+				rawMinor = raw;
+
+			}	
+			
+		}
+		return  rawMinor;
+		
+	}
+	
+	private RawMaterial searchMajorRaw(List<RawMaterial> rawMaterial){
+		int value = 0;
+		RawMaterial rawMajor = null;
+		for (int i = 0; i < rawMaterial.size(); i++) {
+			RawMaterial raw = rawMaterial.get(i);
+			int unit = raw.getUnit();			
+			if (value == 0 || unit > value) {
+				value=unit;
+				rawMajor = raw;
+
+			}	
+		}
+		return rawMajor;
 	}
 	
 	private int calcProduct(List<Product> product){

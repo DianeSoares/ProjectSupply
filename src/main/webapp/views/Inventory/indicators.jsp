@@ -27,7 +27,7 @@
 				Indicadores			
 			</h3><br><br>
 
-			<h1>Acuracidade de estoque: ${result}</h1>
+			<h1>Acuracidade de estoque: ${result}%</h1>
 			
 			<div class="col-md-12">
 

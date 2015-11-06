@@ -42,6 +42,7 @@
 										<label for="categoryC">Quantidade de matéria prima da categoria C :${accuracyC}</label>
 										<br><input type="text" placeholder="Itens divergentes" name="difC"/><br>
 										<input type="hidden" value="${accuracyC}" name="accC"/>	
+										
 										<input type="hidden" value="${total}" name="total"/>	
 										
 										<br>

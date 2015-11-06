@@ -57,12 +57,16 @@ public class InventoryController {
 		Double accA = Double.parseDouble(request.getParameter("accA"));
 		Double accB = Double.parseDouble(request.getParameter("accB"));
 		Double accC = Double.parseDouble(request.getParameter("accC"));
+		
 		Double total = Double.parseDouble(request.getParameter("total"));
 
 		Double result = calcAc(difA, difB, difC, accA, accB, accC, total);
 		
+		String resultado = String.format("%.2f", result);
+
+		
 		ModelAndView model = new ModelAndView("Inventory/indicators");
-		model.addObject("result", result);	
+		model.addObject("result", resultado);	
 		return model;
 	}
 	
@@ -187,9 +191,9 @@ public class InventoryController {
 		Double v2 = v1(accB, total);
 		Double v3 = v1(accC, total);
 		
-		Double At1 = v1(At, total);
-		Double Bt1 = v1(Bt, total);
-		Double Ct1 = v1(Ct, total);
+		Double At1 = v1(At, accA);
+		Double Bt1 = v1(Bt, accB);
+		Double Ct1 = v1(Ct, accC);
 		
 		Double result = calcVal(v1, v2, v3, At1, Bt1, Ct1);
 		return result;

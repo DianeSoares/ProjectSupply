@@ -57,13 +57,13 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-shopping-cart"></i> Indicadores <i class="fa fa-fw fa-caret-down"></i></a>
                          <ul id="demo2" class="collapse">
                             <li>
-                                <a href="<%= request.getContextPath() %>/Acuracidade">Acuracidade do estoque</a>
+                                <a href="<%= request.getContextPath() %>/Accuracy">Acuracidade do estoque</a>
                             </li>
                              <li>
-                                <a href="<%= request.getContextPath() %>/Estocagem">Utilização da Capacidade de Estocagem</a>
+                                <a href="<%= request.getContextPath() %>/Storage">Utilização da Capacidade de Estocagem</a>
                             </li>
                             <li>
-                                <a href="<%= request.getContextPath() %>/Cobertura">Cobertura do Estoque</a>
+                                <a href="<%= request.getContextPath() %>/Coverage">Cobertura do Estoque</a>
                             </li>
                             <li>
                                 <a href="<%= request.getContextPath() %>/Giro">Giro dos Estoques</a>

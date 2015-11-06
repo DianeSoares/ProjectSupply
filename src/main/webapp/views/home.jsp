@@ -97,8 +97,8 @@
 	                                        <i class="fa fa-long-arrow-up fa-5x"></i>
 	                                    </div>
 	                                    <div class="col-xs-9 text-right">
-	                                        <div class="huge">0</div>
-	                                        <div>Máximo de estoque atingido.</div>
+	                                        <div class="huge">${rawMajor}</div>
+	                                        <div>Maior estoque de ${rawMajorM}</div>
 	                                    </div>
 	                                </div>
 	                            </div>
@@ -112,8 +112,8 @@
 	                                        <i class="fa fa-long-arrow-down fa-5x"></i>
 	                                    </div>
 	                                    <div class="col-xs-9 text-right">
-	                                        <div class="huge">0</div>
-	                                        <div>Menor estoque atingido.</div>
+	                                        <div class="huge">${raw}</div>
+	                                        <div>Menor estoque de ${rawNameM}.</div>
 	                                    </div>
 	                                </div>
 	                            </div>

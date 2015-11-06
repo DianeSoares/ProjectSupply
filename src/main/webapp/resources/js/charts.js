@@ -67,12 +67,6 @@ $(function () {
             data: [
                 ['Vidros S.A',   45.0],
                 ['Metal S.A',       26.8],
-                {
-                    name: 'Peças S.A',
-                    y: 12.8,
-                    sliced: true,
-                    selected: true
-                },
                 ['Borracha S.A',    14.7],
                 ['Outros',   0.7]
             ]

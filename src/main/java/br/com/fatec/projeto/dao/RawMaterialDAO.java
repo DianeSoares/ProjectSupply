@@ -15,4 +15,6 @@ public interface RawMaterialDAO {
 	public void remove(int id);
 
 	public List<RawMaterial> findByCategory(String category);
+
+	public List<RawMaterial> findBySupplier(int supplier);
 }

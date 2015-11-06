@@ -30,7 +30,7 @@
 			<div class="col-md-12">
 								<!-- div login -->
 					<div class="container droppedHover">
-						<form name="accuracy" action="<%= request.getContextPath() %>/calcEstocagem">			
+						<form name="accuracy" action="<%= request.getContextPath() %>/calcCoverage">			
 										
 										<label for="total">Quantidade de matéria prima em estoque: ${total}</label>
 										<br>
