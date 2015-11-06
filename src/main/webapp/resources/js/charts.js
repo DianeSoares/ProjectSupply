@@ -1,3 +1,46 @@
+loadXMLDoc();
+
+
+function loadXMLDoc() {
+	
+	var xmlhttp;
+	if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp = new XMLHttpRequest();
+	} else {// code for IE6, IE5
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			//document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+			var myArr = JSON.parse(xmlhttp.responseText);
+		    processList(myArr);
+		}
+	}
+	xmlhttp.open("POST", "/fatec/arquivoJSON", true);
+	xmlhttp.setRequestHeader('Content-Type',
+			'application/x-www-form-urlencoded');
+	xmlhttp.send(null);
+}
+
+var todos = [];
+
+function processList(arr) {
+	var i;
+
+	//todos os eventos
+	for (i = 0; i < arr.length; i++) {
+		//cada evento em uma lista
+		var dado = arr[i].split(",");
+		//todos os eventos em uma lista
+		dado[1] = parseInt(dado[1]);
+		
+		
+		todos.push(dado);
+	}
+}
+
+
+
 $(function () {
 	var chart = new Highcharts.Chart({
         chart: {
@@ -64,12 +107,7 @@ $(function () {
         series: [{
             type: 'pie',
             name: 'Fornecedores',
-            data: [
-                ['Vidros S.A',   45.0],
-                ['Metal S.A',       26.8],
-                ['Borracha S.A',    14.7],
-                ['Outros',   0.7]
-            ]
+            data: todos
         }]
     });
 });
