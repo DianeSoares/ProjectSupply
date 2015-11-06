@@ -37,6 +37,7 @@ function processList(arr) {
 		
 		todos.push(dado);
 	}
+	grafico2(todos);
 }
 
 
@@ -76,7 +77,7 @@ $(function () {
     });
 });
 
-$(function () {
+function grafico2 (todos) {
 	var chart1 = new Highcharts.Chart({
         chart: {
             renderTo: 'chartPie',
@@ -110,4 +111,4 @@ $(function () {
             data: todos
         }]
     });
-});
+};
