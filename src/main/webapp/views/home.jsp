@@ -132,6 +132,12 @@
 	                            <div class="panel-body">
 	                                <div id="chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 	                            </div>
+	                            	<div id="sliders">
+									    <table>
+									        <tr><td>Alpha Angle</td><td><input id="R0" type="range" min="0" max="45" value="15"/> <span id="R0-value" class="value"></span></td></tr>
+									        <tr><td>Beta Angle</td><td><input id="R1" type="range" min="0" max="45" value="15"/> <span id="R1-value" class="value"></span></td></tr>
+									    </table>
+									</div>
 	                        </div>
 	                    </div>
 	                </div>
@@ -141,14 +147,12 @@
 	                    <div class="col-lg-6">
 	                        <div class="panel panel-default">
 	                            <div class="panel-heading">
-	                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Donut Chart</h3>
+	                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Participação de fornecedores</h3>
 	                            </div>
 	                            <div class="panel-body">
 	                                
 									<div id="chartPie" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-	                                <div class="text-right">
-	                                    <a href="#">Ver mais gráficos <i class="fa fa-arrow-circle-right"></i></a>
-	                                </div>
+	                               
 	                            </div>
 	                        </div>
 	                    </div>

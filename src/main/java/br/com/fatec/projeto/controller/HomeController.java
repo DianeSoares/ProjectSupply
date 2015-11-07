@@ -76,78 +76,43 @@ public class HomeController {
 		ModelAndView model = new ModelAndView("About/about");
 		return model;
 	}
+	
+	@RequestMapping("/arquivoJSON")
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
 
-	@SuppressWarnings("null")
-	@RequestMapping("/json")
-	public ModelAndView json() {
-		ModelAndView model = new ModelAndView("teste");
+		List<String> data = funcaoJson();
+		Gson gson = new Gson();
+		String json = gson.toJson(data);
 
-		/*
-		 * Gson gson = new GsonBuilder().create(); gson.toJson("Hello",
-		 * System.out); gson.toJson(123, System.out);
-		 */
-		List<Supplier> supplier = supplierDao.findAll();
-
-		List<String> name = new ArrayList<String>();
-		List<Integer> valor = new ArrayList<Integer>();
-
-		for (int i = 0; i < supplier.size(); i++) {
-			name.add(supplier.get(i).getCompany());
-			valor.add(calcSupplier(supplier.get(i).getId()));
-		}
-
-		model.addObject("listName", name);
-		model.addObject("listValor", valor);
-
-		return model;
-
-		/*
-		 * 
-		 * Map<String, String> data1 = new HashMap<String,String>(); data1.put(
-		 * "key", "Computers"); data1.put( "value","114");
-		 * 
-		 * Map<String, Object> data2 = new HashMap<String, Object>(); data2.put(
-		 * "key", "Electronics"); data2.put( "value","214");
-		 * 
-		 * Map<String, Object> data3 = new HashMap<String, Object>(); data3.put(
-		 * "key", "Mechanical"); data3.put( "value","514");
-		 * 
-		 * JSONObject json1 = new JSONObject(data1); JSONObject json2 = new
-		 * JSONObject(data2); JSONObject json3 = new JSONObject(data3);
-		 * 
-		 * JSONArray array = new JSONArray(); array.put(json1);
-		 * array.put(json2); array.put(json3);
-		 * 
-		 * JSONObject finalObject = new JSONObject();
-		 * finalObject.put("student_data", array);
-		 * 
-		 * response.getOutputHeaders().putSingle("Access-Control-Allow-Origin",
-		 * "*"); return
-		 * Response.status(200).entity(finalObject.toString()).build(); return
-		 * null;
-		 * 
-		 */
+		response.getWriter().write(json);
+		response.getWriter().close();
+		
+		
 
 	}
+	
+	@RequestMapping("/arquivoInventoryJSON")
+	public void doPostInventory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
 
-	/*
-	 * private Map<String, Integer> funcaoJson() {
-	 * 
-	 * List<Supplier> supplier = supplierDao.findAll();
-	 * 
-	 * Map<String, Integer> aMap = new HashMap<String, Integer>();
-	 * 
-	 * 
-	 * for (int i = 0; i < supplier.size(); i++) {
-	 * 
-	 * String name = supplier.get(i).getCompany(); int valor =
-	 * calcSupplier(supplier.get(i).getId());
-	 * 
-	 * aMap.put(name , valor); }
-	 * 
-	 * 
-	 * return aMap; }
-	 */
+		List<Integer> data = getInventory();
+		
+		List<String> strings = new ArrayList<String>();
+
+		for (int i = 0; i < data.size(); i++) {
+			strings.add(i,Integer.toString(data.get(i)));
+		}
+		
+		Gson gson = new Gson();
+		String json = gson.toJson(strings);
+
+		response.getWriter().write(json);
+		response.getWriter().close();
+		
+		
+
+	}
 
 	private List<String> funcaoJson() {
 		List<Supplier> supplier = supplierDao.findAll();
@@ -169,20 +134,6 @@ public class HomeController {
 		return strings;
 	}
 
-	@RequestMapping("/arquivoJSON")
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html");
-
-		List<String> data = funcaoJson();
-		Gson gson = new Gson();
-		String json = gson.toJson(data);
-
-		response.getWriter().write(json);
-		response.getWriter().close();
-		
-		
-
-	}
 
 	private int calcSupplier(int supplier) {
 
@@ -255,5 +206,21 @@ public class HomeController {
 
 		return value;
 
+	}
+	
+	private List<Integer> getInventory(){
+		List<RawMaterial> rawMaterial = rawMaterialDao.findAll();
+		List<Integer> valor = new ArrayList<Integer>();
+
+		int value = 0;
+		for (int i = 0; i < rawMaterial.size(); i++) {
+			RawMaterial raw = rawMaterial.get(i);
+			int unit = raw.getUnit();
+			value = value + unit;
+			valor.add(value);
+		}
+
+		return valor;
+		
 	}
 }

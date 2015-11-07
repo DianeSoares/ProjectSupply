@@ -1,6 +1,4 @@
-loadXMLDoc();
-
-
+var arr = loadXMLDoc();
 function loadXMLDoc() {
 	
 	var xmlhttp;
@@ -41,40 +39,55 @@ function processList(arr) {
 }
 
 
-
 $(function () {
-	var chart = new Highcharts.Chart({
+    // Set up the chart
+    var chart = new Highcharts.Chart({
         chart: {
             renderTo: 'chart',
-            type: 'line'
-        },
-        title: {
-            text: 'Estoque'
-        },
-        subtitle: {
-            text: 'teste'
-        },
-        xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        },
-        yAxis: {
-            title: {
-                text: 'Quantidade'
+            type: 'column',
+            margin: 75,
+            options3d: {
+                enabled: true,
+                alpha: 15,
+                beta: 15,
+                depth: 50,
+                viewDistance: 25
             }
         },
+        title: {
+            text: 'Gráfico de estoque'
+        },
+        subtitle: {
+            text: 'Teste'
+        },
         plotOptions: {
-            line: {
-                dataLabels: {
-                    enabled: true
-                },
-                enableMouseTracking: false
+            column: {
+                depth: 25
             }
         },
         series: [{
-            name: 'Estoque',
-            data: [1, 2, 3, 1, 5, 3, 7, 1, 9, 4, 8, 12]
+            data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
         }]
     });
+
+    function showValues() {
+        $('#R0-value').html(chart.options.chart.options3d.alpha);
+        $('#R1-value').html(chart.options.chart.options3d.beta);
+    }
+
+    // Activate the sliders
+    $('#R0').on('change', function () {
+        chart.options.chart.options3d.alpha = this.value;
+        showValues();
+        chart.redraw(false);
+    });
+    $('#R1').on('change', function () {
+        chart.options.chart.options3d.beta = this.value;
+        showValues();
+        chart.redraw(false);
+    });
+
+    showValues();
 });
 
 function grafico2 (todos) {
@@ -112,3 +125,4 @@ function grafico2 (todos) {
         }]
     });
 };
+
