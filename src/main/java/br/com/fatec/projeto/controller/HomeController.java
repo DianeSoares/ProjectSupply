@@ -96,22 +96,12 @@ public class HomeController {
 	public void doPostInventory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 
-		List<Integer> data = getInventory();
-		
-		List<String> strings = new ArrayList<String>();
-
-		for (int i = 0; i < data.size(); i++) {
-			strings.add(i,Integer.toString(data.get(i)));
-		}
-		
+		List<String> data = getInventory();
 		Gson gson = new Gson();
-		String json = gson.toJson(strings);
+		String json = gson.toJson(data);
 
 		response.getWriter().write(json);
 		response.getWriter().close();
-		
-		
-
 	}
 
 	private List<String> funcaoJson() {
@@ -208,19 +198,24 @@ public class HomeController {
 
 	}
 	
-	private List<Integer> getInventory(){
-		List<RawMaterial> rawMaterial = rawMaterialDao.findAll();
+	private List<String> getInventory() {
+		List<RawMaterial> raw = rawMaterialDao.findAll();
+
+		List<String> name = new ArrayList<String>();
 		List<Integer> valor = new ArrayList<Integer>();
 
-		int value = 0;
-		for (int i = 0; i < rawMaterial.size(); i++) {
-			RawMaterial raw = rawMaterial.get(i);
-			int unit = raw.getUnit();
-			value = value + unit;
-			valor.add(value);
+		for (int i = 0; i < raw.size(); i++) {
+			name.add(raw.get(i).getDescription());
+			valor.add(raw.get(i).getUnit());
 		}
 
-		return valor;
+		List<String> strings = new ArrayList<String>();
 		
+		for (int i = 0; i < name.size(); i++) {
+			strings.add(name.get(i) + ","+ valor.get(i));
+		}
+
+		return strings;
 	}
+
 }

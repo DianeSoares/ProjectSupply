@@ -20,7 +20,30 @@ function loadXMLDoc() {
 	xmlhttp.send(null);
 }
 
+var inventory = loadDoc();
+function loadDoc() {
+	
+	var http;
+	if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+		http = new XMLHttpRequest();
+	} else {// code for IE6, IE5
+		http = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	http.onreadystatechange = function() {
+		if (http.readyState == 4 && http.status == 200) {
+			//document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+			var teste = JSON.parse(http.responseText);
+		    processInventory(teste);
+		}
+	}
+	http.open("POST", "/fatec/arquivoInventoryJSON", true);
+	http.setRequestHeader('Content-Type',
+			'application/x-www-form-urlencoded');
+	http.send(null);
+}
+
 var todos = [];
+var inventoryList = [];
 
 function processList(arr) {
 	var i;
@@ -38,8 +61,25 @@ function processList(arr) {
 	grafico2(todos);
 }
 
+function processInventory(inventory) {
+	var i;
+	var nameList = [];
+	//todos os eventos
+	for (i = 0; i < inventory.length; i++) {
+		//cada evento em uma lista
+		
+		var dado = inventory[i].split(",");
+		//todos os eventos em uma lista
+		dado[1] = parseInt(dado[1]);
+		
+		nameList.push(dado[0]);
+		inventoryList.push(dado);
+	}
+	inventoryGraph(inventoryList, nameList)
+}
 
-$(function () {
+
+function inventoryGraph (inventory, nameList) {
     // Set up the chart
     var chart = new Highcharts.Chart({
         chart: {
@@ -54,19 +94,25 @@ $(function () {
                 viewDistance: 25
             }
         },
+        xAxis: {
+            categories: nameList
+        },
         title: {
             text: 'Gráfico de estoque'
         },
         subtitle: {
-            text: 'Teste'
+            text: 'Estoque de matéria prima'
         },
         plotOptions: {
             column: {
+            	colorByPoint: true,
                 depth: 25
             }
         },
         series: [{
-            data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+        	name: 'Materia Prima',
+            data: inventory,
+            showInLegend: true
         }]
     });
 
@@ -88,7 +134,7 @@ $(function () {
     });
 
     showValues();
-});
+};
 
 function grafico2 (todos) {
 	var chart1 = new Highcharts.Chart({
